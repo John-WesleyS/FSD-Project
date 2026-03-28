@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Papers - Exam Guidance Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand"><a href="../index.html" style="text-decoration:none;color:white;"><h1>📚 Exam Guidance Hub</h1><p class="tagline">Your Complete Guide to Government Examinations</p></a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="dropdown"><a href="jobs.html" class="nav-link">Jobs ▾</a><ul class="dropdown-menu"><li><a href="jobs.html">All Jobs</a></li><li><a href="central-jobs.html">Central Govt</a></li><li><a href="state-jobs.html">State Govt</a></li></ul></li>
+                <li class="dropdown"><a href="notifications.html" class="nav-link">Notifications ▾</a><ul class="dropdown-menu"><li><a href="notifications.html">All Notifications</a></li><li><a href="admit-card.html">Admit Cards</a></li><li><a href="results.html">Results</a></li></ul></li>
+                <li class="dropdown"><a href="syllabus.html" class="nav-link">Syllabus ▾</a><ul class="dropdown-menu"><li><a href="syllabus.html">Exam Syllabus</a></li><li><a href="exam-pattern.html">Exam Pattern</a></li><li><a href="cut-off.html">Cut-off Marks</a></li></ul></li>
+                <li><a href="papers.html" class="nav-link active">Question Papers</a></li>
+                <li><a href="study-material.html" class="nav-link">Study Material</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <span>Question Papers</span></div>
+        <h1>📝 Previous Year Question Papers</h1>
+        <p>Download free previous year question papers with solutions for all major government exams.</p>
+    </section>
+
+    <div class="page-content">
+        <div class="stats-row">
+            <div class="stats-box"><div class="num">200+</div><div class="lbl">Total Papers</div></div>
+            <div class="stats-box"><div class="num">15+</div><div class="lbl">Exams Covered</div></div>
+            <div class="stats-box"><div class="num">2019-24</div><div class="lbl">Years Available</div></div>
+            <div class="stats-box"><div class="num">Free</div><div class="lbl">Download</div></div>
+        </div>
+
+        <div class="filters-row">
+            <select id="examFilter" onchange="applyFilters()">
+                <option value="">All Exams</option>
+                <option value="UPSC">UPSC</option>
+                <option value="SSC">SSC</option>
+                <option value="RRB">RRB</option>
+                <option value="Bank">Bank</option>
+                <option value="State">State</option>
+            </select>
+            <select id="yearFilter" onchange="applyFilters()">
+                <option value="">All Years</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+            </select>
+            <select id="subjectFilter" onchange="applyFilters()">
+                <option value="">All Subjects</option>
+                <option value="gs">General Studies</option>
+                <option value="math">Mathematics</option>
+                <option value="english">English</option>
+                <option value="reasoning">Reasoning</option>
+                <option value="science">Science</option>
+            </select>
+            <input type="text" id="searchPaper" placeholder="🔍 Search papers..." oninput="applyFilters()">
+            <button onclick="resetPaperFilters()">Reset</button>
+        </div>
+
+        <div class="papers-container" id="allPapersGrid"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>📚 Exam Guidance Hub</h4><p>Your go-to portal for government exam information.</p></div>
+            <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="jobs.html">Jobs</a></li><li><a href="syllabus.html">Syllabus</a></li></ul></div>
+            <div class="footer-section"><h4>Contact</h4><p>📧 info@examhub.com</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Government Exam Portal. All rights reserved.</p></div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        const allPapers = [
+            { id:1, exam:"UPSC", title:"UPSC Prelims GS-I 2023", year:2023, subject:"gs", questions:100, duration:"2 hours", withSolution:true },
+            { id:2, exam:"UPSC", title:"UPSC Prelims GS-I 2022", year:2022, subject:"gs", questions:100, duration:"2 hours", withSolution:true },
+            { id:3, exam:"UPSC", title:"UPSC Mains GS-I 2023", year:2023, subject:"gs", questions:20, duration:"3 hours", withSolution:true },
+            { id:4, exam:"SSC", title:"SSC CGL Tier-I 2023 (Math)", year:2023, subject:"math", questions:25, duration:"60 min", withSolution:true },
+            { id:5, exam:"SSC", title:"SSC CHSL Tier-I 2024 (English)", year:2024, subject:"english", questions:25, duration:"60 min", withSolution:false },
+            { id:6, exam:"SSC", title:"SSC CGL Tier-I 2022 (Reasoning)", year:2022, subject:"reasoning", questions:25, duration:"60 min", withSolution:true },
+            { id:7, exam:"RRB", title:"RRB NTPC CBT-1 2023 (Math)", year:2023, subject:"math", questions:30, duration:"90 min", withSolution:true },
+            { id:8, exam:"RRB", title:"RRB NTPC CBT-1 2021 (Reasoning)", year:2021, subject:"reasoning", questions:30, duration:"90 min", withSolution:true },
+            { id:9, exam:"RRB", title:"RRB Group-D 2022 (GS)", year:2022, subject:"gs", questions:100, duration:"90 min", withSolution:true },
+            { id:10, exam:"Bank", title:"IBPS PO Prelims 2024 (Quant)", year:2024, subject:"math", questions:35, duration:"20 min", withSolution:false },
+            { id:11, exam:"Bank", title:"IBPS Clerk Prelims 2023 (English)", year:2023, subject:"english", questions:30, duration:"20 min", withSolution:true },
+            { id:12, exam:"Bank", title:"SBI PO Prelims 2023 (Reasoning)", year:2023, subject:"reasoning", questions:35, duration:"20 min", withSolution:true },
+            { id:13, exam:"State", title:"State PCS GS 2023", year:2023, subject:"gs", questions:100, duration:"2 hours", withSolution:true },
+            { id:14, exam:"State", title:"State Police Recruitment 2022", year:2022, subject:"reasoning", questions:50, duration:"2 hours", withSolution:false },
+            { id:15, exam:"SSC", title:"SSC MTS 2023 (General Awareness)", year:2023, subject:"gs", questions:25, duration:"45 min", withSolution:true },
+            { id:16, exam:"RRB", title:"RRB NTPC CBT-2 2023 (Math)", year:2023, subject:"math", questions:35, duration:"90 min", withSolution:true },
+        ];
+
+        let filtered = [...allPapers];
+
+        function renderPapers(papers) {
+            const container = document.getElementById('allPapersGrid');
+            if (!papers.length) { container.innerHTML = '<p style="text-align:center;grid-column:1/-1;padding:3rem;color:#777">No papers found matching your criteria.</p>'; return; }
+            container.innerHTML = papers.map(p => `
+                <div class="paper-card">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.8rem">
+                        <span class="paper-subject">${p.exam}</span>
+                        ${p.withSolution ? '<span style="background:#e8f5e9;color:#2e7d32;font-size:0.75rem;padding:0.2rem 0.6rem;border-radius:20px;font-weight:600">✅ With Solutions</span>' : ''}
+                    </div>
+                    <h4 class="paper-title">${p.title}</h4>
+                    <div class="paper-meta">
+                        <span>📅 ${p.year}</span>
+                        <span>❓ ${p.questions} Questions</span>
+                    </div>
+                    <div style="font-size:0.82rem;color:#999;margin-bottom:1rem">⏱️ ${p.duration}</div>
+                    <div style="display:flex;gap:0.6rem">
+                        <button class="download-btn" style="flex:2" onclick="alert('📥 Downloading ${p.title}')">📥 Download PDF</button>
+                        ${p.withSolution ? `<button class="exam-btn info-btn" style="flex:1;border-radius:8px" onclick="alert('📖 Opening answer key')">Answer Key</button>` : ''}
+                    </div>
+                </div>`).join('');
+        }
+
+        function applyFilters() {
+            const exam = document.getElementById('examFilter').value;
+            const year = document.getElementById('yearFilter').value;
+            const subject = document.getElementById('subjectFilter').value;
+            const search = document.getElementById('searchPaper').value.toLowerCase();
+            filtered = allPapers.filter(p => {
+                return (!exam || p.exam === exam) &&
+                       (!year || p.year == year) &&
+                       (!subject || p.subject === subject) &&
+                       (!search || p.title.toLowerCase().includes(search));
+            });
+            renderPapers(filtered);
+        }
+
+        function resetPaperFilters() {
+            ['examFilter','yearFilter','subjectFilter'].forEach(id => document.getElementById(id).value='');
+            document.getElementById('searchPaper').value='';
+            renderPapers(allPapers);
+        }
+
+        renderPapers(allPapers);
+        document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));
+    </script>
+</body>
+</html>

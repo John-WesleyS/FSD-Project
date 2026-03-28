@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Material - Exam Guidance Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .material-card { background:white; border-radius:14px; padding:1.8rem; box-shadow:0 2px 12px rgba(0,0,0,0.08); transition:all 0.3s; border-top:4px solid #667eea; }
+        .material-card:hover { transform:translateY(-6px); box-shadow:0 8px 25px rgba(0,0,0,0.12); }
+        .material-card h4 { font-size:1rem; color:#1a1a2e; margin-bottom:0.5rem; }
+        .material-card p { font-size:0.85rem; color:#777; margin-bottom:1rem; }
+        .material-meta { display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:1rem; }
+        .material-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.5rem; margin-bottom:2rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand"><a href="../index.html" style="text-decoration:none;color:white;"><h1>📚 Exam Guidance Hub</h1><p class="tagline">Your Complete Guide to Government Examinations</p></a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="dropdown"><a href="jobs.html" class="nav-link">Jobs ▾</a><ul class="dropdown-menu"><li><a href="jobs.html">All Jobs</a></li></ul></li>
+                <li class="dropdown"><a href="notifications.html" class="nav-link">Notifications ▾</a><ul class="dropdown-menu"><li><a href="notifications.html">All</a></li><li><a href="admit-card.html">Admit Cards</a></li><li><a href="results.html">Results</a></li></ul></li>
+                <li class="dropdown"><a href="syllabus.html" class="nav-link">Syllabus ▾</a><ul class="dropdown-menu"><li><a href="syllabus.html">Syllabus</a></li><li><a href="exam-pattern.html">Exam Pattern</a></li><li><a href="cut-off.html">Cut-off</a></li></ul></li>
+                <li><a href="papers.html" class="nav-link">Question Papers</a></li>
+                <li><a href="study-material.html" class="nav-link active">Study Material</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <span>Study Material</span></div>
+        <h1>📚 Free Study Material</h1>
+        <p>Download free notes, books, e-books, and study resources for all major government exams.</p>
+    </section>
+
+    <div class="page-content">
+        <div class="stats-row">
+            <div class="stats-box"><div class="num">500+</div><div class="lbl">Study Resources</div></div>
+            <div class="stats-box"><div class="num">Free</div><div class="lbl">All Downloads</div></div>
+            <div class="stats-box"><div class="num">15+</div><div class="lbl">Subjects Covered</div></div>
+            <div class="stats-box"><div class="num">Weekly</div><div class="lbl">New Additions</div></div>
+        </div>
+
+        <div class="tab-nav">
+            <button class="tab-btn active" data-tab="notes" data-group="study" onclick="switchTab('notes','study')">📓 Notes</button>
+            <button class="tab-btn" data-tab="books" data-group="study" onclick="switchTab('books','study')">📚 Books</button>
+            <button class="tab-btn" data-tab="current" data-group="study" onclick="switchTab('current','study')">📰 Current Affairs</button>
+            <button class="tab-btn" data-tab="video" data-group="study" onclick="switchTab('video','study')">🎥 Video Lectures</button>
+        </div>
+
+        <!-- Notes -->
+        <div class="tab-content active" data-tab="notes" data-group="study">
+            <h3 style="font-family:'Playfair Display',serif;color:#1a1a2e;margin-bottom:1.5rem">📓 Study Notes by Subject</h3>
+            <div class="material-grid">
+                ${[
+                    {icon:'🏛️',title:'Indian Polity - Complete Notes',desc:'Laxmikanth based notes covering Constitution, Amendments, Judiciary, Parliament',exam:'UPSC/SSC/State',pages:120,format:'PDF'},
+                    {icon:'🌍',title:'Indian Geography - Detailed Notes',desc:'Physical, Human and Economic Geography with maps and diagrams',exam:'UPSC/SSC/RRB',pages:95,format:'PDF'},
+                    {icon:'📜',title:'Modern Indian History Notes',desc:'1857 to Independence - all movements, events and personalities',exam:'UPSC/SSC/State',pages:80,format:'PDF'},
+                    {icon:'💰',title:'Indian Economy - Quick Notes',desc:'Economic concepts, government schemes, budget highlights, financial institutions',exam:'UPSC/Bank/SSC',pages:70,format:'PDF'},
+                    {icon:'🔬',title:'General Science Notes',desc:'Physics, Chemistry and Biology basics for competitive exams',exam:'SSC/RRB/Police',pages:110,format:'PDF'},
+                    {icon:'🧠',title:'Reasoning Tricks & Shortcuts',desc:'All types of reasoning questions with shortcuts and solved examples',exam:'All Exams',pages:90,format:'PDF'},
+                    {icon:'🔢',title:'Quantitative Aptitude Notes',desc:'All topics with formulas, shortcuts and 500+ solved examples',exam:'All Exams',pages:150,format:'PDF'},
+                    {icon:'🔤',title:'English Grammar & Usage',desc:'Grammar rules, vocabulary, comprehension strategies for govt exams',exam:'All Exams',pages:60,format:'PDF'},
+                ].map(m=>`<div class="material-card">
+                    <div style="font-size:2rem;margin-bottom:0.8rem">${m.icon}</div>
+                    <h4>${m.title}</h4>
+                    <p>${m.desc}</p>
+                    <div class="material-meta">
+                        <span class="badge badge-blue">${m.exam}</span>
+                        <span class="badge badge-green">${m.pages} Pages</span>
+                        <span class="badge badge-orange">${m.format}</span>
+                    </div>
+                    <button class="download-btn" onclick="alert('Downloading ${m.title}')">📥 Download Free</button>
+                </div>`).join('')}
+            </div>
+        </div>
+
+        <!-- Books -->
+        <div class="tab-content" data-tab="books" data-group="study">
+            <h3 style="font-family:'Playfair Display',serif;color:#1a1a2e;margin-bottom:1.5rem">📚 Recommended Books</h3>
+            <div class="material-grid">
+                ${[
+                    {title:"Indian Polity - M. Laxmikanth",author:"M. Laxmikanth",subject:"Polity",edition:"6th Ed",rating:"⭐⭐⭐⭐⭐"},
+                    {title:"India's Struggle for Independence",author:"Bipan Chandra",subject:"History",edition:"Latest",rating:"⭐⭐⭐⭐⭐"},
+                    {title:"Certificate Physical & Human Geography",author:"Goh Cheng Leong",subject:"Geography",edition:"Latest",rating:"⭐⭐⭐⭐"},
+                    {title:"Quantitative Aptitude",author:"R.S. Aggarwal",subject:"Math",edition:"Latest",rating:"⭐⭐⭐⭐⭐"},
+                    {title:"Verbal & Non-Verbal Reasoning",author:"R.S. Aggarwal",subject:"Reasoning",edition:"Latest",rating:"⭐⭐⭐⭐⭐"},
+                    {title:"Word Power Made Easy",author:"Norman Lewis",subject:"English",edition:"Latest",rating:"⭐⭐⭐⭐⭐"},
+                    {title:"Indian Economy",author:"Ramesh Singh",subject:"Economy",edition:"13th Ed",rating:"⭐⭐⭐⭐"},
+                    {title:"General Science",author:"Lucent Publications",subject:"Science",edition:"Latest",rating:"⭐⭐⭐⭐"},
+                ].map(b=>`<div class="material-card" style="border-top-color:#28a745">
+                    <div style="font-size:2rem;margin-bottom:0.8rem">📗</div>
+                    <h4>${b.title}</h4>
+                    <p>by <strong>${b.author}</strong></p>
+                    <div class="material-meta">
+                        <span class="badge badge-green">${b.subject}</span>
+                        <span class="badge badge-blue">${b.edition}</span>
+                    </div>
+                    <div style="margin-bottom:0.8rem;font-size:0.9rem">${b.rating}</div>
+                    <button class="exam-btn info-btn" style="width:100%;border-radius:8px;padding:0.6rem" onclick="alert('Showing where to buy/download ${b.title}')">View Details</button>
+                </div>`).join('')}
+            </div>
+        </div>
+
+        <!-- Current Affairs -->
+        <div class="tab-content" data-tab="current" data-group="study">
+            <h3 style="font-family:'Playfair Display',serif;color:#1a1a2e;margin-bottom:1.5rem">📰 Current Affairs</h3>
+            <div class="material-grid">
+                ${['March 2024','February 2024','January 2024','December 2023','November 2023','October 2023'].map(m=>`
+                <div class="material-card" style="border-top-color:#17a2b8">
+                    <div style="font-size:2rem;margin-bottom:0.8rem">📰</div>
+                    <h4>Monthly Current Affairs - ${m}</h4>
+                    <p>Complete national & international news, appointments, awards, sports events and government schemes for ${m}.</p>
+                    <div class="material-meta"><span class="badge badge-blue">Monthly Digest</span><span class="badge badge-green">PDF</span></div>
+                    <button class="download-btn" onclick="alert('Downloading Current Affairs ${m}')">📥 Download</button>
+                </div>`).join('')}
+            </div>
+        </div>
+
+        <!-- Videos -->
+        <div class="tab-content" data-tab="video" data-group="study">
+            <h3 style="font-family:'Playfair Display',serif;color:#1a1a2e;margin-bottom:1.5rem">🎥 Video Lecture Series</h3>
+            <div class="material-grid">
+                ${[
+                    {title:'UPSC Polity Masterclass',lectures:45,duration:'90 hrs',instructor:'Expert Faculty'},
+                    {title:'SSC CGL Quant Shortcuts',lectures:30,duration:'60 hrs',instructor:'Math Expert'},
+                    {title:'Reasoning Tricks for All Exams',lectures:25,duration:'50 hrs',instructor:'Top Faculty'},
+                    {title:'English for Government Exams',lectures:20,duration:'40 hrs',instructor:'English Expert'},
+                    {title:'Banking Awareness Series',lectures:15,duration:'30 hrs',instructor:'Banking Faculty'},
+                    {title:'General Science Crash Course',lectures:18,duration:'36 hrs',instructor:'Science Expert'},
+                ].map(v=>`<div class="material-card" style="border-top-color:#dc3545">
+                    <div style="font-size:2rem;margin-bottom:0.8rem">🎬</div>
+                    <h4>${v.title}</h4>
+                    <p>By <strong>${v.instructor}</strong></p>
+                    <div class="material-meta">
+                        <span class="badge badge-red">${v.lectures} Lectures</span>
+                        <span class="badge badge-blue">${v.duration}</span>
+                        <span class="badge badge-green">Free</span>
+                    </div>
+                    <button class="exam-btn apply-btn" style="width:100%;border-radius:8px;padding:0.6rem" onclick="alert('Opening ${v.title} playlist')">▶ Watch Now</button>
+                </div>`).join('')}
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>📚 Exam Guidance Hub</h4><p>Your go-to portal for government exam information.</p></div>
+            <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="papers.html">Question Papers</a></li><li><a href="mock-test.html">Mock Tests</a></li></ul></div>
+            <div class="footer-section"><h4>Contact</h4><p>📧 info@examhub.com</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Government Exam Portal. All rights reserved.</p></div>
+    </footer>
+    <script src="../script.js"></script>
+    <script>document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));</script>
+</body>
+</html>

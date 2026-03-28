@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Exam Guidance Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .contact-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:3rem; }
+        @media(max-width:768px) { .contact-grid { grid-template-columns:1fr; } }
+        .contact-info-card { background:white; border-radius:12px; padding:2rem; box-shadow:0 2px 12px rgba(0,0,0,0.08); margin-bottom:1.5rem; display:flex; align-items:flex-start; gap:1.2rem; transition:transform 0.2s; }
+        .contact-info-card:hover { transform:translateY(-4px); }
+        .contact-icon { width:50px; height:50px; border-radius:50%; background:linear-gradient(135deg,#667eea,#764ba2); display:flex; align-items:center; justify-content:center; font-size:1.4rem; flex-shrink:0; }
+        .contact-form-full { background:white; border-radius:12px; padding:2.5rem; box-shadow:0 2px 12px rgba(0,0,0,0.08); }
+        .form-group { margin-bottom:1.5rem; }
+        .form-group label { display:block; font-weight:600; color:#333; margin-bottom:0.5rem; font-size:0.95rem; }
+        .form-group input, .form-group textarea, .form-group select { width:100%; padding:0.9rem 1rem; border:2px solid #eee; border-radius:8px; font-size:1rem; font-family:inherit; transition:all 0.3s; background:#fafafa; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline:none; border-color:#667eea; background:white; box-shadow:0 0 0 4px rgba(102,126,234,0.1); }
+        .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+        @media(max-width:600px) { .form-row { grid-template-columns:1fr; } }
+        .faq-mini { background:white; border-radius:12px; padding:2rem; box-shadow:0 2px 12px rgba(0,0,0,0.08); margin-top:2rem; }
+        .faq-mini-item { border-bottom:1px solid #f0f0f0; padding:1rem 0; }
+        .faq-mini-item:last-child { border-bottom:none; }
+        .faq-mini-q { font-weight:600; color:#333; cursor:pointer; display:flex; justify-content:space-between; }
+        .faq-mini-a { color:#666; font-size:0.9rem; margin-top:0.5rem; display:none; line-height:1.7; }
+        .faq-mini-a.open { display:block; }
+        .success-msg { display:none; background:#d5f5e3; border:1px solid #27ae60; color:#1e8449; padding:1.2rem; border-radius:8px; text-align:center; font-weight:600; margin-top:1rem; }
+        .success-msg.show { display:block; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="../index.html" style="text-decoration:none;color:white;">
+                    <h1>📚 Exam Guidance Hub</h1>
+                    <p class="tagline">Your Complete Guide to Government Examinations</p>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="dropdown"><a href="jobs.html" class="nav-link">Jobs ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jobs.html">All Jobs</a></li>
+                        <li><a href="central-jobs.html">Central Govt Jobs</a></li>
+                        <li><a href="state-jobs.html">State Govt Jobs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="notifications.html" class="nav-link">Notifications ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="notifications.html">All Notifications</a></li>
+                        <li><a href="admit-card.html">Admit Cards</a></li>
+                        <li><a href="results.html">Results</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="syllabus.html" class="nav-link">Syllabus ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="syllabus.html">Exam Syllabus</a></li>
+                        <li><a href="exam-pattern.html">Exam Pattern</a></li>
+                        <li><a href="cut-off.html">Cut-off Marks</a></li>
+                    </ul>
+                </li>
+                <li><a href="papers.html" class="nav-link">Question Papers</a></li>
+                <li><a href="study-material.html" class="nav-link">Study Material</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#1a1a2e 0%,#2c3e50 50%,#34495e 100%);">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> <span>›</span> <span>Contact Us</span>
+        </div>
+        <h1>📬 Get In Touch</h1>
+        <p>Have questions about exams, our content, or found an error? We're happy to help.</p>
+    </section>
+
+    <div class="page-content">
+
+        <div class="contact-grid">
+            <!-- Left: Contact Info -->
+            <div>
+                <h2 style="color:#1a1a2e;margin-bottom:1.5rem;font-size:1.5rem;">Contact Information</h2>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <h4 style="margin-bottom:0.3rem;">Email Us</h4>
+                        <p style="color:#667eea;font-weight:600;">info@examhub.com</p>
+                        <p style="color:#666;font-size:0.9rem;">We reply within 24 hours on working days</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h4 style="margin-bottom:0.3rem;">Call / WhatsApp</h4>
+                        <p style="color:#667eea;font-weight:600;">+91-9876543210</p>
+                        <p style="color:#666;font-size:0.9rem;">Mon–Sat: 9 AM – 6 PM IST</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4 style="margin-bottom:0.3rem;">Office Address</h4>
+                        <p style="color:#555;font-size:0.95rem;">Exam Guidance Hub<br>Plot 14, Knowledge Park<br>Hyderabad, Telangana – 500032</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-card">
+                    <div class="contact-icon">🕐</div>
+                    <div>
+                        <h4 style="margin-bottom:0.3rem;">Support Hours</h4>
+                        <p style="color:#555;font-size:0.9rem;"><strong>Monday – Friday:</strong> 9 AM – 7 PM</p>
+                        <p style="color:#555;font-size:0.9rem;"><strong>Saturday:</strong> 10 AM – 5 PM</p>
+                        <p style="color:#999;font-size:0.85rem;">Closed on Sundays & Public Holidays</p>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div style="background:white;border-radius:12px;padding:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+                    <h4 style="margin-bottom:1rem;color:#1a1a2e;">Follow Us</h4>
+                    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                        <button onclick="alert('Opening Telegram channel...')" style="padding:0.6rem 1.2rem;background:#0088cc;color:white;border:none;border-radius:8px;cursor:pointer;font-weight:600;display:flex;align-items:center;gap:0.5rem;">✈️ Telegram</button>
+                        <button onclick="alert('Opening YouTube channel...')" style="padding:0.6rem 1.2rem;background:#ff0000;color:white;border:none;border-radius:8px;cursor:pointer;font-weight:600;display:flex;align-items:center;gap:0.5rem;">▶️ YouTube</button>
+                        <button onclick="alert('Opening Instagram page...')" style="padding:0.6rem 1.2rem;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:white;border:none;border-radius:8px;cursor:pointer;font-weight:600;display:flex;align-items:center;gap:0.5rem;">📸 Instagram</button>
+                        <button onclick="alert('Opening Facebook page...')" style="padding:0.6rem 1.2rem;background:#1877f2;color:white;border:none;border-radius:8px;cursor:pointer;font-weight:600;display:flex;align-items:center;gap:0.5rem;">👥 Facebook</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Contact Form -->
+            <div>
+                <div class="contact-form-full">
+                    <h2 style="color:#1a1a2e;margin-bottom:1.5rem;font-size:1.5rem;">Send Us a Message</h2>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name *</label>
+                            <input type="text" id="firstName" placeholder="Ravi" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" id="lastName" placeholder="Kumar">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" id="email" placeholder="ravi@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+91 98765 43210">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Query Type *</label>
+                        <select id="queryType" required>
+                            <option value="">Select query type</option>
+                            <option value="exam-info">Exam Information</option>
+                            <option value="syllabus">Syllabus / Pattern</option>
+                            <option value="papers">Question Papers</option>
+                            <option value="notification">Notifications / Results</option>
+                            <option value="correction">Report an Error</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Subject *</label>
+                        <input type="text" id="subject" placeholder="e.g. UPSC 2024 Syllabus Query" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Message *</label>
+                        <textarea id="message" rows="5" placeholder="Please describe your query in detail..." required style="resize:vertical;"></textarea>
+                    </div>
+
+                    <button onclick="submitForm()" style="width:100%;padding:1rem;background:linear-gradient(135deg,#667eea,#764ba2);color:white;border:none;border-radius:8px;font-size:1.1rem;font-weight:700;cursor:pointer;transition:all 0.3s;">
+                        📤 Send Message
+                    </button>
+
+                    <div class="success-msg" id="successMsg">
+                        ✅ Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                    </div>
+                </div>
+
+                <!-- FAQ mini -->
+                <div class="faq-mini">
+                    <h3 style="color:#1a1a2e;margin-bottom:1rem;">❓ Quick Answers</h3>
+                    <div class="faq-mini-item">
+                        <div class="faq-mini-q" onclick="toggleMini(this)">How often is content updated? <span>+</span></div>
+                        <div class="faq-mini-a">Our portal is updated daily with new notifications, result announcements, and exam dates. We monitor all official sources continuously.</div>
+                    </div>
+                    <div class="faq-mini-item">
+                        <div class="faq-mini-q" onclick="toggleMini(this)">Are the question papers genuine? <span>+</span></div>
+                        <div class="faq-mini-a">Yes, all question papers are collected from official sources and verified before publishing. They are for educational purposes only.</div>
+                    </div>
+                    <div class="faq-mini-item">
+                        <div class="faq-mini-q" onclick="toggleMini(this)">Can I request a specific exam's materials? <span>+</span></div>
+                        <div class="faq-mini-a">Absolutely! Use the contact form above and specify the exam name. We'll try to add the requested materials within 3–5 working days.</div>
+                    </div>
+                    <div class="faq-mini-item">
+                        <div class="faq-mini-q" onclick="toggleMini(this)">Is this portal free to use? <span>+</span></div>
+                        <div class="faq-mini-a">Yes, all content on Exam Guidance Hub is completely free of charge. Our mission is to democratize access to government exam resources.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>📚 Exam Guidance Hub</h4>
+                <p>Your complete guide for all Central & State Government Examinations in India.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="jobs.html">All Jobs</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                    <li><a href="papers.html">Question Papers</a></li>
+                    <li><a href="results.html">Results</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="syllabus.html">Syllabus</a></li>
+                    <li><a href="exam-pattern.html">Exam Pattern</a></li>
+                    <li><a href="mock-test.html">Mock Tests</a></li>
+                    <li><a href="study-material.html">Study Material</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📧 info@examhub.com</p>
+                <p>📞 +91-9876543210</p>
+                <p>📍 Hyderabad, Telangana</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Government Exam Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function submitForm() {
+            const first = document.getElementById('firstName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const qtype = document.getElementById('queryType').value;
+            const subject = document.getElementById('subject').value.trim();
+            const msg = document.getElementById('message').value.trim();
+
+            if (!first || !email || !qtype || !subject || !msg) {
+                alert('Please fill in all required fields (marked with *)');
+                return;
+            }
+            if (!email.includes('@')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            document.getElementById('successMsg').classList.add('show');
+            document.getElementById('firstName').value = '';
+            document.getElementById('lastName').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('queryType').value = '';
+            document.getElementById('subject').value = '';
+            document.getElementById('message').value = '';
+
+            setTimeout(() => document.getElementById('successMsg').classList.remove('show'), 6000);
+        }
+
+        function toggleMini(el) {
+            const answer = el.nextElementSibling;
+            const icon = el.querySelector('span');
+            const isOpen = answer.classList.contains('open');
+            document.querySelectorAll('.faq-mini-a').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-mini-q span').forEach(s => s.textContent = '+');
+            if (!isOpen) {
+                answer.classList.add('open');
+                icon.textContent = '−';
+            }
+        }
+
+        document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State Government Jobs 2024 - Exam Guidance Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="../index.html" style="text-decoration:none;color:white;">
+                    <h1>📚 Exam Guidance Hub</h1>
+                    <p class="tagline">Your Complete Guide to Government Examinations</p>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="dropdown"><a href="jobs.html" class="nav-link active">Jobs ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jobs.html">All Jobs</a></li>
+                        <li><a href="central-jobs.html">Central Govt Jobs</a></li>
+                        <li><a href="state-jobs.html">State Govt Jobs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="notifications.html" class="nav-link">Notifications ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="notifications.html">All Notifications</a></li>
+                        <li><a href="admit-card.html">Admit Cards</a></li>
+                        <li><a href="results.html">Results</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="syllabus.html" class="nav-link">Syllabus ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="syllabus.html">Exam Syllabus</a></li>
+                        <li><a href="exam-pattern.html">Exam Pattern</a></li>
+                        <li><a href="cut-off.html">Cut-off Marks</a></li>
+                    </ul>
+                </li>
+                <li><a href="papers.html" class="nav-link">Question Papers</a></li>
+                <li><a href="study-material.html" class="nav-link">Study Material</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#1a3a1a 0%,#1e5631 50%,#145a32 100%);">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> <span>›</span> <a href="jobs.html">Jobs</a> <span>›</span> <span>State Govt Jobs</span>
+        </div>
+        <h1>🏢 State Government Jobs 2024</h1>
+        <p>Find State PSC, Police, Teaching, Municipal and other state-level government job openings across India.</p>
+    </section>
+
+    <div class="page-content">
+        <div class="stats-row">
+            <div class="stats-box"><div class="num">80,000+</div><div class="lbl">State Vacancies</div></div>
+            <div class="stats-box"><div class="num">28+</div><div class="lbl">States Covered</div></div>
+            <div class="stats-box"><div class="num">6</div><div class="lbl">Categories</div></div>
+            <div class="stats-box"><div class="num">Active</div><div class="lbl">Recruitment Open</div></div>
+        </div>
+
+        <!-- State Filter Tabs -->
+        <div style="margin-bottom:2rem;">
+            <h3 style="margin-bottom:1rem;color:#1a1a2e;">Filter by State / Category</h3>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1rem;">
+                <button class="tab-btn active" onclick="filterByState('all',this)">All States</button>
+                <button class="tab-btn" onclick="filterByState('andhra',this)">Andhra Pradesh</button>
+                <button class="tab-btn" onclick="filterByState('telangana',this)">Telangana</button>
+                <button class="tab-btn" onclick="filterByState('karnataka',this)">Karnataka</button>
+                <button class="tab-btn" onclick="filterByState('tamilnadu',this)">Tamil Nadu</button>
+                <button class="tab-btn" onclick="filterByState('kerala',this)">Kerala</button>
+                <button class="tab-btn" onclick="filterByState('maharashtra',this)">Maharashtra</button>
+                <button class="tab-btn" onclick="filterByState('up',this)">Uttar Pradesh</button>
+                <button class="tab-btn" onclick="filterByState('rajasthan',this)">Rajasthan</button>
+            </div>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+                <select id="catFilter" onchange="applyCatFilter()">
+                    <option value="">All Categories</option>
+                    <option value="psc">State PSC</option>
+                    <option value="police">Police</option>
+                    <option value="teaching">Teaching</option>
+                    <option value="revenue">Revenue</option>
+                    <option value="municipal">Municipal</option>
+                    <option value="health">Health</option>
+                </select>
+                <input type="text" id="stateSearch" placeholder="🔍 Search..." oninput="applyCatFilter()" style="padding:0.6rem 1rem;border:2px solid #ddd;border-radius:8px;font-size:0.95rem;min-width:200px;">
+            </div>
+        </div>
+
+        <div class="cards-grid" id="stateCardsGrid"></div>
+
+        <!-- State PSC Info -->
+        <div style="margin-top:3rem;">
+            <h2 style="color:#1a1a2e;margin-bottom:1.5rem;font-size:1.6rem;">📊 State PSC Overview</h2>
+            <div style="overflow-x:auto;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>State PSC</th>
+                            <th>Full Name</th>
+                            <th>Main Exam</th>
+                            <th>Approx Vacancies</th>
+                            <th>Official Site</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>APPSC</td><td>Andhra Pradesh PSC</td><td>Group I/II/III</td><td>3,000+</td><td><button onclick="alert('Opening official site...')" style="padding:0.3rem 0.8rem;background:#667eea;color:white;border:none;border-radius:5px;cursor:pointer;">Visit</button></td></tr>
+                        <tr><td>TSPSC</td><td>Telangana State PSC</td><td>Group I/II/III/IV</td><td>5,000+</td><td><button onclick="alert('Opening official site...')" style="padding:0.3rem 0.8rem;background:#667eea;color:white;border:none;border-radius:5px;cursor:pointer;">Visit</button></td></tr>
+                        <tr><td>KPSC</td><td>Karnataka PSC</td><td>KAS / Group A&B</td><td>2,500+</td><td><button onclick="alert('Opening official site...')" style="padding:0.3rem 0.8rem;background:#667eea;color:white;border:none;border-radius:5px;cursor:pointer;">Visit</button></td></tr>
+                        <tr><td>TNPSC</td><td>Tamil Nadu PSC</td><td>Group I/II/IV</td><td>4,000+</td><td><button onclick="alert('Opening official site...')" style="padding:0.3rem 0.8rem;background:#667eea;color:white;border:none;border-radius:5px;cursor:pointer;">Visit</button></td></tr>
+                        <tr><td>UPPSC</td><td>Uttar Pradesh PSC</td><td>PCS / RO ARO</td><td>6,000+</td><td><button onclick="alert('Opening official site...')" style="padding:0.3rem 0.8rem;background:#667eea;color:white;border:none;border-radius:5px;cursor:pointer;">Visit</button></td></tr>
+                        <tr><td>RPSC</td><td>Rajasthan PSC</td><td>RAS / Lecturer</td><td>3,500+</td><td><button onclick="alert('Opening official site...')" style="padding:0.3rem 0.8rem;background:#667eea;color:white;border:none;border-radius:5px;cursor:pointer;">Visit</button></td></tr>
+                        <tr><td>MPSC</td><td>Maharashtra PSC</td><td>MCS / STI / PSI</td><td>4,500+</td><td><button onclick="alert('Opening official site...')" style="padding:0.3rem 0.8rem;background:#667eea;color:white;border:none;border-radius:5px;cursor:pointer;">Visit</button></td></tr>
+                        <tr><td>Kerala PSC</td><td>Kerala Public Service Commission</td><td>KAS / Various</td><td>8,000+</td><td><button onclick="alert('Opening official site...')" style="padding:0.3rem 0.8rem;background:#667eea;color:white;border:none;border-radius:5px;cursor:pointer;">Visit</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>📚 Exam Guidance Hub</h4>
+                <p>Your complete guide for all Central & State Government Examinations in India.</p>
+            </div>
+            <div class="footer-section">
+                <h4>State Govt Jobs</h4>
+                <ul>
+                    <li><a href="state-jobs.html">All State Jobs</a></li>
+                    <li><a href="central-jobs.html">Central Govt Jobs</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                    <li><a href="results.html">Results</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="syllabus.html">Syllabus</a></li>
+                    <li><a href="papers.html">Question Papers</a></li>
+                    <li><a href="mock-test.html">Mock Tests</a></li>
+                    <li><a href="study-material.html">Study Material</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📧 info@examhub.com</p>
+                <p>📞 +91-9876543210</p>
+                <p>📍 Exam Hub, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Government Exam Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const stateJobs = [
+            { name:"APPSC Group I Services", state:"andhra", cat:"psc", vacancies:189, qual:"Graduate", salary:"₹54,000–₹1,42,400", lastDate:"2024-04-20", icon:"🏛️" },
+            { name:"AP Police Constable Recruitment", state:"andhra", cat:"police", vacancies:6100, qual:"10th Pass", salary:"₹21,230–₹63,010", lastDate:"2024-05-10", icon:"👮" },
+            { name:"TSPSC Group II Services", state:"telangana", cat:"psc", vacancies:785, qual:"Graduate", salary:"₹35,120–₹1,00,560", lastDate:"2024-04-28", icon:"🏛️" },
+            { name:"Telangana Police SI Recruitment", state:"telangana", cat:"police", vacancies:544, qual:"Graduate", salary:"₹35,120–₹1,00,560", lastDate:"2024-05-15", icon:"👮" },
+            { name:"KPSC Group A&B Services", state:"karnataka", cat:"psc", vacancies:368, qual:"Graduate", salary:"₹50,250–₹1,20,000", lastDate:"2024-04-15", icon:"🏛️" },
+            { name:"Karnataka Police Constable", state:"karnataka", cat:"police", vacancies:4000, qual:"12th Pass", salary:"₹21,400–₹42,000", lastDate:"2024-05-01", icon:"👮" },
+            { name:"TNPSC Group II Services", state:"tamilnadu", cat:"psc", vacancies:1200, qual:"Graduate", salary:"₹35,900–₹1,13,500", lastDate:"2024-05-20", icon:"🏛️" },
+            { name:"TN Teacher Recruitment (TRBS)", state:"tamilnadu", cat:"teaching", vacancies:3500, qual:"B.Ed", salary:"₹28,900–₹78,800", lastDate:"2024-04-25", icon:"👩‍🏫" },
+            { name:"Kerala PSC LP/UP Teacher", state:"kerala", cat:"teaching", vacancies:1800, qual:"B.Ed", salary:"₹27,900–₹63,700", lastDate:"2024-04-18", icon:"👩‍🏫" },
+            { name:"Kerala Police Constable", state:"kerala", cat:"police", vacancies:900, qual:"12th Pass", salary:"₹27,900–₹59,400", lastDate:"2024-05-05", icon:"👮" },
+            { name:"MPSC STI (Sales Tax Inspector)", state:"maharashtra", cat:"psc", vacancies:396, qual:"Graduate", salary:"₹44,900–₹1,42,400", lastDate:"2024-04-30", icon:"🏛️" },
+            { name:"Maharashtra Police Constable", state:"maharashtra", cat:"police", vacancies:5000, qual:"12th Pass", salary:"₹21,700–₹69,100", lastDate:"2024-05-12", icon:"👮" },
+            { name:"UPPSC PCS Exam", state:"up", cat:"psc", vacancies:250, qual:"Graduate", salary:"₹56,100–₹1,77,500", lastDate:"2024-04-10", icon:"🏛️" },
+            { name:"UP Police Constable Bharti", state:"up", cat:"police", vacancies:25000, qual:"12th Pass", salary:"₹21,700–₹69,100", lastDate:"2024-05-08", icon:"👮" },
+            { name:"RPSC RAS (Rajasthan Admin Services)", state:"rajasthan", cat:"psc", vacancies:905, qual:"Graduate", salary:"₹56,100–₹1,77,500", lastDate:"2024-04-22", icon:"🏛️" },
+            { name:"Rajasthan Police Constable", state:"rajasthan", cat:"police", vacancies:4438, qual:"12th Pass", salary:"₹20,800–₹65,800", lastDate:"2024-05-18", icon:"👮" },
+        ];
+
+        let currentState = 'all';
+        let filtered = [...stateJobs];
+
+        function filterByState(state, btn) {
+            currentState = state;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            applyCatFilter();
+        }
+
+        function applyCatFilter() {
+            const cat = document.getElementById('catFilter').value;
+            const search = document.getElementById('stateSearch').value.toLowerCase();
+            filtered = stateJobs.filter(j => {
+                const matchState = currentState === 'all' || j.state === currentState;
+                const matchCat = !cat || j.cat === cat;
+                const matchSearch = !search || j.name.toLowerCase().includes(search);
+                return matchState && matchCat && matchSearch;
+            });
+            renderCards(filtered);
+        }
+
+        function renderCards(data) {
+            const grid = document.getElementById('stateCardsGrid');
+            if (data.length === 0) {
+                grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:3rem;color:#666;"><h3>No jobs found matching your criteria.</h3></div>';
+                return;
+            }
+            grid.innerHTML = data.map(j => `
+                <div class="job-card">
+                    <div class="job-card-header">
+                        <span style="font-size:1.8rem;">${j.icon}</span>
+                        <span class="exam-level" style="background:rgba(255,255,255,0.3);">${j.state.toUpperCase()}</span>
+                    </div>
+                    <h3 style="margin-bottom:0.8rem;font-size:1rem;color:#1a1a2e;">${j.name}</h3>
+                    <div class="exam-detail"><span class="exam-detail-label">📋 Vacancies:</span> <span class="exam-detail-value">${j.vacancies.toLocaleString()}</span></div>
+                    <div class="exam-detail"><span class="exam-detail-label">🎓 Qualification:</span> <span class="exam-detail-value">${j.qual}</span></div>
+                    <div class="exam-detail"><span class="exam-detail-label">💰 Pay Scale:</span> <span class="exam-detail-value">${j.salary}</span></div>
+                    <div class="exam-detail"><span class="exam-detail-label">⏰ Last Date:</span> <span class="exam-detail-value" style="color:#c0392b;font-weight:600;">${formatDate(j.lastDate)}</span></div>
+                    <button onclick="alert('Redirecting to official state portal...')" style="width:100%;margin-top:1rem;padding:0.7rem;background:linear-gradient(135deg,#27ae60,#1e8449);color:white;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Apply Now</button>
+                </div>
+            `).join('');
+        }
+
+        function formatDate(s) { return new Date(s).toLocaleDateString('en-IN',{year:'numeric',month:'short',day:'numeric'}); }
+
+        renderCards(stateJobs);
+
+        document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));
+    </script>
+</body>
+</html>

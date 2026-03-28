@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Keys 2024 - Exam Guidance Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="../index.html" style="text-decoration:none;color:white;">
+                    <h1>📚 Exam Guidance Hub</h1>
+                    <p class="tagline">Your Complete Guide to Government Examinations</p>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="dropdown"><a href="jobs.html" class="nav-link">Jobs ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jobs.html">All Jobs</a></li>
+                        <li><a href="central-jobs.html">Central Govt Jobs</a></li>
+                        <li><a href="state-jobs.html">State Govt Jobs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="notifications.html" class="nav-link">Notifications ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="notifications.html">All Notifications</a></li>
+                        <li><a href="admit-card.html">Admit Cards</a></li>
+                        <li><a href="results.html">Results</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="syllabus.html" class="nav-link active">Syllabus ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="syllabus.html">Exam Syllabus</a></li>
+                        <li><a href="exam-pattern.html">Exam Pattern</a></li>
+                        <li><a href="cut-off.html">Cut-off Marks</a></li>
+                    </ul>
+                </li>
+                <li><a href="papers.html" class="nav-link">Question Papers</a></li>
+                <li><a href="study-material.html" class="nav-link">Study Material</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#2c1654 0%,#4a235a 50%,#6c3483 100%);">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> <span>›</span> <span>Answer Keys</span>
+        </div>
+        <h1>🔑 Official Answer Keys 2024</h1>
+        <p>Download official & provisional answer keys. Challenge incorrect answers before the final key release.</p>
+    </section>
+
+    <div class="page-content">
+        <div class="stats-row">
+            <div class="stats-box"><div class="num">45+</div><div class="lbl">Answer Keys</div></div>
+            <div class="stats-box"><div class="num">12</div><div class="lbl">Exams Covered</div></div>
+            <div class="stats-box"><div class="num">2024</div><div class="lbl">Latest Year</div></div>
+            <div class="stats-box"><div class="num">Free</div><div class="lbl">All Downloads</div></div>
+        </div>
+
+        <!-- Alert Banner -->
+        <div style="background:linear-gradient(135deg,#fff3cd,#ffeaa7);border-left:5px solid #f39c12;border-radius:10px;padding:1.2rem 1.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:1rem;">
+            <span style="font-size:1.5rem;">⚠️</span>
+            <div>
+                <strong style="color:#7d6608;">Important Notice:</strong>
+                <span style="color:#7d6608;"> Always check the official body's website for the most authoritative answer key. Provisional keys may be updated after challenge period.</span>
+            </div>
+        </div>
+
+        <!-- Filter -->
+        <div class="filters-row" style="margin-bottom:2rem;">
+            <select id="examFilter" onchange="filterKeys()">
+                <option value="">All Exams</option>
+                <option value="upsc">UPSC</option>
+                <option value="ssc">SSC</option>
+                <option value="rrb">RRB</option>
+                <option value="bank">Banking</option>
+                <option value="state">State PSC</option>
+            </select>
+            <select id="typeFilter" onchange="filterKeys()">
+                <option value="">All Types</option>
+                <option value="provisional">Provisional</option>
+                <option value="final">Final</option>
+            </select>
+            <input type="text" id="keySearch" placeholder="🔍 Search exam..." oninput="filterKeys()" style="padding:0.6rem 1rem;border:2px solid #ddd;border-radius:8px;font-size:0.95rem;min-width:200px;">
+        </div>
+
+        <div style="overflow-x:auto;">
+            <table class="data-table" id="keysTable">
+                <thead>
+                    <tr>
+                        <th>Exam Name</th>
+                        <th>Exam Date</th>
+                        <th>Key Type</th>
+                        <th>Released On</th>
+                        <th>Challenge Deadline</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="keysBody"></tbody>
+            </table>
+        </div>
+
+        <!-- How to Challenge Section -->
+        <div style="margin-top:3rem;background:white;border-radius:12px;padding:2rem;box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+            <h2 style="color:#1a1a2e;margin-bottom:1.5rem;">📝 How to Challenge an Answer Key</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;">
+                <div style="text-align:center;padding:1.5rem;background:#f8f9fa;border-radius:10px;">
+                    <div style="font-size:2.5rem;margin-bottom:0.8rem;">🔍</div>
+                    <h4>Step 1: Review</h4>
+                    <p style="color:#666;font-size:0.9rem;margin-top:0.5rem;">Download and carefully review the provisional answer key against your answers</p>
+                </div>
+                <div style="text-align:center;padding:1.5rem;background:#f8f9fa;border-radius:10px;">
+                    <div style="font-size:2.5rem;margin-bottom:0.8rem;">📚</div>
+                    <h4>Step 2: Research</h4>
+                    <p style="color:#666;font-size:0.9rem;margin-top:0.5rem;">Find credible sources (NCERT, standard books) supporting your answer</p>
+                </div>
+                <div style="text-align:center;padding:1.5rem;background:#f8f9fa;border-radius:10px;">
+                    <div style="font-size:2.5rem;margin-bottom:0.8rem;">💻</div>
+                    <h4>Step 3: Submit</h4>
+                    <p style="color:#666;font-size:0.9rem;margin-top:0.5rem;">Login to the official portal and submit your challenge with supporting evidence</p>
+                </div>
+                <div style="text-align:center;padding:1.5rem;background:#f8f9fa;border-radius:10px;">
+                    <div style="font-size:2.5rem;margin-bottom:0.8rem;">💰</div>
+                    <h4>Step 4: Pay Fee</h4>
+                    <p style="color:#666;font-size:0.9rem;margin-top:0.5rem;">Pay the challenge fee (usually ₹100–₹1000 per question). Refunded if accepted.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>📚 Exam Guidance Hub</h4>
+                <p>Your complete guide for all Central & State Government Examinations in India.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Answer Keys</h4>
+                <ul>
+                    <li><a href="answer-key.html">All Answer Keys</a></li>
+                    <li><a href="results.html">Results</a></li>
+                    <li><a href="papers.html">Question Papers</a></li>
+                    <li><a href="cut-off.html">Cut-off Marks</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="syllabus.html">Syllabus</a></li>
+                    <li><a href="exam-pattern.html">Exam Pattern</a></li>
+                    <li><a href="mock-test.html">Mock Tests</a></li>
+                    <li><a href="study-material.html">Study Material</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📧 info@examhub.com</p>
+                <p>📞 +91-9876543210</p>
+                <p>📍 Exam Hub, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Government Exam Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const answerKeys = [
+            { exam:"UPSC Prelims 2024 (GS Paper 1)", category:"upsc", examDate:"2024-05-26", type:"provisional", released:"2024-06-05", challengeDeadline:"2024-06-12" },
+            { exam:"UPSC Prelims 2024 (CSAT Paper 2)", category:"upsc", examDate:"2024-05-26", type:"provisional", released:"2024-06-05", challengeDeadline:"2024-06-12" },
+            { exam:"SSC CGL Tier I 2024", category:"ssc", examDate:"2024-03-10", type:"final", released:"2024-04-01", challengeDeadline:null },
+            { exam:"SSC CHSL Tier I 2024", category:"ssc", examDate:"2024-03-01", type:"provisional", released:"2024-03-15", challengeDeadline:"2024-03-22" },
+            { exam:"SSC MTS Paper I 2024", category:"ssc", examDate:"2024-02-20", type:"final", released:"2024-03-10", challengeDeadline:null },
+            { exam:"RRB NTPC CBT 1 2024", category:"rrb", examDate:"2024-04-20", type:"provisional", released:"2024-05-01", challengeDeadline:"2024-05-08" },
+            { exam:"RRB Group D Phase II 2024", category:"rrb", examDate:"2024-03-25", type:"final", released:"2024-04-15", challengeDeadline:null },
+            { exam:"IBPS PO Prelims 2024", category:"bank", examDate:"2024-04-06", type:"provisional", released:"2024-04-14", challengeDeadline:"2024-04-20" },
+            { exam:"SBI Clerk Prelims 2024", category:"bank", examDate:"2024-03-15", type:"final", released:"2024-04-05", challengeDeadline:null },
+            { exam:"APPSC Group II Paper I 2024", category:"state", examDate:"2024-03-08", type:"provisional", released:"2024-03-18", challengeDeadline:"2024-03-25" },
+            { exam:"TSPSC Group II Mains 2024", category:"state", examDate:"2024-04-15", type:"provisional", released:"2024-04-28", challengeDeadline:"2024-05-05" },
+            { exam:"UPSC CAPF (AC) 2023", category:"upsc", examDate:"2023-08-20", type:"final", released:"2023-10-15", challengeDeadline:null },
+        ];
+
+        let filtered = [...answerKeys];
+
+        function filterKeys() {
+            const exam = document.getElementById('examFilter').value;
+            const type = document.getElementById('typeFilter').value;
+            const search = document.getElementById('keySearch').value.toLowerCase();
+            filtered = answerKeys.filter(k => {
+                const matchExam = !exam || k.category === exam;
+                const matchType = !type || k.type === type;
+                const matchSearch = !search || k.exam.toLowerCase().includes(search);
+                return matchExam && matchType && matchSearch;
+            });
+            renderTable(filtered);
+        }
+
+        function renderTable(data) {
+            const body = document.getElementById('keysBody');
+            if (data.length === 0) {
+                body.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:2rem;color:#666;">No answer keys found.</td></tr>';
+                return;
+            }
+            body.innerHTML = data.map(k => `
+                <tr>
+                    <td><strong>${k.exam}</strong></td>
+                    <td>${formatDate(k.examDate)}</td>
+                    <td><span style="padding:0.3rem 0.8rem;border-radius:12px;font-size:0.8rem;font-weight:600;background:${k.type==='final'?'#d5f5e3':'#fef9e7'};color:${k.type==='final'?'#1e8449':'#b7950b'};">${k.type==='final'?'✅ Final':'⏳ Provisional'}</span></td>
+                    <td>${formatDate(k.released)}</td>
+                    <td style="color:${k.challengeDeadline?'#c0392b':'#7f8c8d'};font-weight:600;">${k.challengeDeadline ? formatDate(k.challengeDeadline) : 'Closed'}</td>
+                    <td style="display:flex;gap:0.5rem;">
+                        <button onclick="alert('Downloading answer key PDF...')" style="padding:0.4rem 0.8rem;background:#667eea;color:white;border:none;border-radius:6px;cursor:pointer;font-size:0.85rem;font-weight:600;">📥 Download</button>
+                        ${k.challengeDeadline ? `<button onclick="alert('Opening challenge portal...')" style="padding:0.4rem 0.8rem;background:#e74c3c;color:white;border:none;border-radius:6px;cursor:pointer;font-size:0.85rem;font-weight:600;">✋ Challenge</button>` : ''}
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function formatDate(s) { if (!s) return '—'; return new Date(s).toLocaleDateString('en-IN',{year:'numeric',month:'short',day:'numeric'}); }
+
+        renderTable(answerKeys);
+        document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));
+    </script>
+</body>
+</html>

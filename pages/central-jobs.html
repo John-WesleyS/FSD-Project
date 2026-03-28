@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Government Jobs 2024 - Exam Guidance Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="../index.html" style="text-decoration:none;color:white;">
+                    <h1>📚 Exam Guidance Hub</h1>
+                    <p class="tagline">Your Complete Guide to Government Examinations</p>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="dropdown"><a href="jobs.html" class="nav-link active">Jobs ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jobs.html">All Jobs</a></li>
+                        <li><a href="central-jobs.html">Central Govt Jobs</a></li>
+                        <li><a href="state-jobs.html">State Govt Jobs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="notifications.html" class="nav-link">Notifications ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="notifications.html">All Notifications</a></li>
+                        <li><a href="admit-card.html">Admit Cards</a></li>
+                        <li><a href="results.html">Results</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="syllabus.html" class="nav-link">Syllabus ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="syllabus.html">Exam Syllabus</a></li>
+                        <li><a href="exam-pattern.html">Exam Pattern</a></li>
+                        <li><a href="cut-off.html">Cut-off Marks</a></li>
+                    </ul>
+                </li>
+                <li><a href="papers.html" class="nav-link">Question Papers</a></li>
+                <li><a href="study-material.html" class="nav-link">Study Material</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> <span>›</span> <a href="jobs.html">Jobs</a> <span>›</span> <span>Central Govt Jobs</span>
+        </div>
+        <h1>🏛️ Central Government Jobs 2024</h1>
+        <p>Explore opportunities in Union PSC, SSC, Railways, Banking, Defence & more central departments.</p>
+    </section>
+
+    <div class="page-content">
+        <div class="stats-row">
+            <div class="stats-box"><div class="num">55,000+</div><div class="lbl">Total Vacancies</div></div>
+            <div class="stats-box"><div class="num">12</div><div class="lbl">Departments</div></div>
+            <div class="stats-box"><div class="num">₹18K–₹2.5L</div><div class="lbl">Salary Range</div></div>
+            <div class="stats-box"><div class="num">8</div><div class="lbl">Active Notifications</div></div>
+        </div>
+
+        <div class="filters-row">
+            <select id="deptFilter" onchange="applyFilters()">
+                <option value="">All Departments</option>
+                <option value="upsc">UPSC</option>
+                <option value="ssc">SSC</option>
+                <option value="rrb">Railways (RRB)</option>
+                <option value="bank">Banking</option>
+                <option value="defence">Defence</option>
+                <option value="postal">Postal</option>
+            </select>
+            <select id="qualFilter" onchange="applyFilters()">
+                <option value="">All Qualifications</option>
+                <option value="10th">10th Pass</option>
+                <option value="12th">12th Pass</option>
+                <option value="graduate">Graduate</option>
+                <option value="postgraduate">Post Graduate</option>
+            </select>
+            <input type="text" id="searchJob" placeholder="🔍 Search jobs..." oninput="applyFilters()" style="padding:0.6rem 1rem;border:2px solid #ddd;border-radius:8px;font-size:0.95rem;min-width:200px;">
+            <button onclick="resetFilters()" style="padding:0.6rem 1.2rem;background:#667eea;color:white;border:none;border-radius:8px;cursor:pointer;font-weight:600;">Reset</button>
+        </div>
+
+        <div style="overflow-x:auto;margin-bottom:2rem;">
+            <table class="data-table" id="jobsTable">
+                <thead>
+                    <tr>
+                        <th>Post Name</th>
+                        <th>Department</th>
+                        <th>Vacancies</th>
+                        <th>Qualification</th>
+                        <th>Pay Scale</th>
+                        <th>Last Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+
+        <div class="cards-grid" id="cardsGrid"></div>
+
+        <div class="info-box" style="background:linear-gradient(135deg,#e8f4fd,#d6eaf8);border-left:5px solid #2980b9;border-radius:10px;padding:2rem;margin-top:2rem;">
+            <h3 style="color:#1a5276;margin-bottom:1rem;">📌 How to Apply for Central Govt Jobs</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;">
+                <div style="background:white;padding:1rem;border-radius:8px;text-align:center;">
+                    <div style="font-size:2rem;margin-bottom:0.5rem;">1️⃣</div>
+                    <strong>Check Notification</strong>
+                    <p style="font-size:0.9rem;color:#555;margin-top:0.3rem;">Read the official notification carefully</p>
+                </div>
+                <div style="background:white;padding:1rem;border-radius:8px;text-align:center;">
+                    <div style="font-size:2rem;margin-bottom:0.5rem;">2️⃣</div>
+                    <strong>Check Eligibility</strong>
+                    <p style="font-size:0.9rem;color:#555;margin-top:0.3rem;">Verify age, qualification & other criteria</p>
+                </div>
+                <div style="background:white;padding:1rem;border-radius:8px;text-align:center;">
+                    <div style="font-size:2rem;margin-bottom:0.5rem;">3️⃣</div>
+                    <strong>Register Online</strong>
+                    <p style="font-size:0.9rem;color:#555;margin-top:0.3rem;">Fill application on official portal</p>
+                </div>
+                <div style="background:white;padding:1rem;border-radius:8px;text-align:center;">
+                    <div style="font-size:2rem;margin-bottom:0.5rem;">4️⃣</div>
+                    <strong>Pay Fee & Submit</strong>
+                    <p style="font-size:0.9rem;color:#555;margin-top:0.3rem;">Pay application fee and submit before deadline</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>📚 Exam Guidance Hub</h4>
+                <p>Your complete guide for all Central & State Government Examinations in India.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Central Govt Jobs</h4>
+                <ul>
+                    <li><a href="central-jobs.html">All Central Jobs</a></li>
+                    <li><a href="notifications.html">Latest Notifications</a></li>
+                    <li><a href="admit-card.html">Admit Cards</a></li>
+                    <li><a href="results.html">Results</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="syllabus.html">Syllabus</a></li>
+                    <li><a href="papers.html">Question Papers</a></li>
+                    <li><a href="mock-test.html">Mock Tests</a></li>
+                    <li><a href="study-material.html">Study Material</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📧 info@examhub.com</p>
+                <p>📞 +91-9876543210</p>
+                <p>📍 Exam Hub, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Government Exam Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const jobs = [
+            { name:"UPSC Civil Services (IAS/IPS/IFS)", dept:"upsc", vacancies:1056, qual:"graduate", salary:"₹56,100–₹2,50,000", lastDate:"2024-04-15", status:"open" },
+            { name:"SSC CGL (Combined Graduate Level)", dept:"ssc", vacancies:17727, qual:"graduate", salary:"₹25,500–₹1,51,100", lastDate:"2024-04-10", status:"open" },
+            { name:"SSC CHSL (10+2 Level)", dept:"ssc", vacancies:3712, qual:"12th", salary:"₹18,000–₹56,900", lastDate:"2024-04-20", status:"open" },
+            { name:"RRB NTPC Graduate Level", dept:"rrb", vacancies:11558, qual:"graduate", salary:"₹35,400–₹1,12,400", lastDate:"2024-05-01", status:"open" },
+            { name:"RRB ALP (Assistant Loco Pilot)", dept:"rrb", vacancies:5696, qual:"10th", salary:"₹19,900–₹69,100", lastDate:"2024-04-25", status:"upcoming" },
+            { name:"IBPS PO (Bank Probationary Officer)", dept:"bank", vacancies:4455, qual:"graduate", salary:"₹36,000–₹63,840", lastDate:"2024-05-10", status:"open" },
+            { name:"SBI Clerk (Junior Associate)", dept:"bank", vacancies:8283, qual:"graduate", salary:"₹26,000–₹59,170", lastDate:"2024-04-30", status:"open" },
+            { name:"Indian Army Agniveer", dept:"defence", vacancies:25000, qual:"10th", salary:"₹30,000–₹40,000", lastDate:"2024-05-15", status:"upcoming" },
+            { name:"India Post GDS (Gramin Dak Sevak)", dept:"postal", vacancies:30041, qual:"10th", salary:"₹12,000–₹29,380", lastDate:"2024-04-05", status:"open" },
+            { name:"NDA / Naval Academy", dept:"defence", vacancies:395, qual:"12th", salary:"₹56,100–₹1,77,500", lastDate:"2024-04-28", status:"open" },
+            { name:"UPSC CAPF (Central Armed Police)", dept:"upsc", vacancies:506, qual:"graduate", salary:"₹56,100–₹1,77,500", lastDate:"2024-05-20", status:"upcoming" },
+            { name:"SSC MTS (Multi Tasking Staff)", dept:"ssc", vacancies:11409, qual:"10th", salary:"₹18,000–₹56,900", lastDate:"2024-04-18", status:"open" },
+        ];
+
+        let filtered = [...jobs];
+
+        function renderTable(data) {
+            const body = document.getElementById('tableBody');
+            body.innerHTML = data.map(j => `
+                <tr>
+                    <td><strong>${j.name}</strong></td>
+                    <td><span class="badge" style="background:#e8f0fe;color:#3c4ed9;padding:0.2rem 0.6rem;border-radius:12px;font-size:0.8rem;">${j.dept.toUpperCase()}</span></td>
+                    <td style="font-weight:600;color:#1a1a2e;">${j.vacancies.toLocaleString()}</td>
+                    <td>${j.qual.charAt(0).toUpperCase()+j.qual.slice(1)}</td>
+                    <td style="font-size:0.9rem;">${j.salary}</td>
+                    <td style="color:${j.status==='open'?'#c0392b':'#7f8c8d'};font-weight:600;">${formatDate(j.lastDate)}</td>
+                    <td><button onclick="alert('Redirecting to official portal...')" style="padding:0.4rem 0.9rem;background:${j.status==='open'?'#27ae60':'#95a5a6'};color:white;border:none;border-radius:6px;cursor:pointer;font-weight:600;font-size:0.85rem;">${j.status==='open'?'Apply Now':'Upcoming'}</button></td>
+                </tr>
+            `).join('');
+        }
+
+        function renderCards(data) {
+            const grid = document.getElementById('cardsGrid');
+            grid.innerHTML = data.map(j => `
+                <div class="job-card">
+                    <div class="job-card-header">
+                        <span style="font-size:1.8rem;">🏛️</span>
+                        <span class="exam-level">${j.dept.toUpperCase()}</span>
+                    </div>
+                    <h3 style="margin-bottom:0.8rem;font-size:1rem;color:#1a1a2e;">${j.name}</h3>
+                    <div class="exam-detail"><span class="exam-detail-label">📋 Vacancies:</span> <span class="exam-detail-value">${j.vacancies.toLocaleString()}</span></div>
+                    <div class="exam-detail"><span class="exam-detail-label">🎓 Qualification:</span> <span class="exam-detail-value">${j.qual}</span></div>
+                    <div class="exam-detail"><span class="exam-detail-label">💰 Pay Scale:</span> <span class="exam-detail-value">${j.salary}</span></div>
+                    <div class="exam-detail"><span class="exam-detail-label">⏰ Last Date:</span> <span class="exam-detail-value" style="color:#c0392b;font-weight:600;">${formatDate(j.lastDate)}</span></div>
+                    <button onclick="alert('Redirecting to official portal...')" style="width:100%;margin-top:1rem;padding:0.7rem;background:linear-gradient(135deg,#667eea,#764ba2);color:white;border:none;border-radius:8px;font-weight:600;cursor:pointer;">Apply Now</button>
+                </div>
+            `).join('');
+        }
+
+        function applyFilters() {
+            const dept = document.getElementById('deptFilter').value;
+            const qual = document.getElementById('qualFilter').value;
+            const search = document.getElementById('searchJob').value.toLowerCase();
+            filtered = jobs.filter(j => {
+                const matchDept = !dept || j.dept === dept;
+                const matchQual = !qual || j.qual.toLowerCase().includes(qual);
+                const matchSearch = !search || j.name.toLowerCase().includes(search);
+                return matchDept && matchQual && matchSearch;
+            });
+            renderTable(filtered);
+            renderCards(filtered);
+        }
+
+        function resetFilters() {
+            document.getElementById('deptFilter').value = '';
+            document.getElementById('qualFilter').value = '';
+            document.getElementById('searchJob').value = '';
+            filtered = [...jobs];
+            renderTable(filtered);
+            renderCards(filtered);
+        }
+
+        function formatDate(s) { return new Date(s).toLocaleDateString('en-IN',{year:'numeric',month:'short',day:'numeric'}); }
+
+        renderTable(jobs);
+        renderCards(jobs);
+
+        document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));
+    </script>
+</body>
+</html>

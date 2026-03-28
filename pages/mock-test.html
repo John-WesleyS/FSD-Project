@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Tests - Exam Guidance Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand"><a href="../index.html" style="text-decoration:none;color:white;"><h1>📚 Exam Guidance Hub</h1><p class="tagline">Your Complete Guide to Government Examinations</p></a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="dropdown"><a href="jobs.html" class="nav-link">Jobs ▾</a><ul class="dropdown-menu"><li><a href="jobs.html">All Jobs</a></li></ul></li>
+                <li class="dropdown"><a href="notifications.html" class="nav-link">Notifications ▾</a><ul class="dropdown-menu"><li><a href="notifications.html">All</a></li><li><a href="admit-card.html">Admit Cards</a></li><li><a href="results.html">Results</a></li></ul></li>
+                <li class="dropdown"><a href="syllabus.html" class="nav-link">Syllabus ▾</a><ul class="dropdown-menu"><li><a href="syllabus.html">Syllabus</a></li><li><a href="exam-pattern.html">Exam Pattern</a></li><li><a href="cut-off.html">Cut-off</a></li></ul></li>
+                <li><a href="papers.html" class="nav-link">Question Papers</a></li>
+                <li><a href="study-material.html" class="nav-link">Study Material</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <span>Mock Tests</span></div>
+        <h1>🎯 Free Mock Tests</h1>
+        <p>Practice with full-length mock tests designed exactly like the real exam. Timed, scored, and reviewed.</p>
+    </section>
+
+    <div class="page-content">
+        <div class="stats-row">
+            <div class="stats-box"><div class="num">100+</div><div class="lbl">Mock Tests</div></div>
+            <div class="stats-box"><div class="num">Free</div><div class="lbl">Access</div></div>
+            <div class="stats-box"><div class="num">10,000+</div><div class="lbl">Questions</div></div>
+            <div class="stats-box"><div class="num">Instant</div><div class="lbl">Results & Analysis</div></div>
+        </div>
+
+        <div class="tab-nav">
+            <button class="tab-btn active" data-tab="full" data-group="mock" onclick="switchTab('full','mock')">Full Length Tests</button>
+            <button class="tab-btn" data-tab="sectional" data-group="mock" onclick="switchTab('sectional','mock')">Sectional Tests</button>
+            <button class="tab-btn" data-tab="topic" data-group="mock" onclick="switchTab('topic','mock')">Topic-wise Tests</button>
+        </div>
+
+        <div class="tab-content active" data-tab="full" data-group="mock">
+            ${[
+                {name:"UPSC Prelims Full Mock - 2024 Pattern",questions:100,duration:"120 min",attempts:15420,difficulty:"Hard",exam:"UPSC"},
+                {name:"SSC CGL Tier-1 Full Mock Test",questions:100,duration:"60 min",attempts:32000,difficulty:"Medium",exam:"SSC"},
+                {name:"RRB NTPC CBT-1 Full Mock",questions:100,duration:"90 min",attempts:28500,difficulty:"Medium",exam:"RRB"},
+                {name:"IBPS PO Prelims Full Mock",questions:100,duration:"60 min",attempts:19800,difficulty:"Hard",exam:"Bank"},
+                {name:"SSC CHSL Tier-1 Full Mock",questions:100,duration:"60 min",attempts:12000,difficulty:"Easy-Medium",exam:"SSC"},
+                {name:"State PSC Prelims Full Mock",questions:150,duration:"120 min",attempts:8500,difficulty:"Medium",exam:"State"},
+            ].map(t=>`<div class="test-card">
+                <div class="test-info">
+                    <h4>${t.name}</h4>
+                    <div class="test-meta">
+                        <span>❓ ${t.questions} Questions</span>
+                        <span>⏱️ ${t.duration}</span>
+                        <span>👥 ${t.attempts.toLocaleString()} Attempts</span>
+                        <span class="badge ${t.difficulty==='Hard'?'badge-red':t.difficulty==='Medium'?'badge-orange':'badge-green'}">${t.difficulty}</span>
+                    </div>
+                </div>
+                <button class="start-btn" onclick="alert('Starting ${t.name}...\n\nThis would launch the interactive test portal.')">Start Test ▶</button>
+            </div>`).join('')}
+        </div>
+
+        <div class="tab-content" data-tab="sectional" data-group="mock">
+            ${[
+                {name:"Reasoning - 35 Questions",questions:35,duration:"25 min",subject:"Reasoning"},
+                {name:"Quantitative Aptitude - 35 Questions",questions:35,duration:"25 min",subject:"Mathematics"},
+                {name:"English Language - 30 Questions",questions:30,duration:"20 min",subject:"English"},
+                {name:"General Awareness - 50 Questions",questions:50,duration:"30 min",subject:"GK"},
+                {name:"General Science - 40 Questions",questions:40,duration:"30 min",subject:"Science"},
+                {name:"Computer Knowledge - 20 Questions",questions:20,duration:"15 min",subject:"Computer"},
+            ].map(t=>`<div class="test-card">
+                <div class="test-info">
+                    <h4>${t.name}</h4>
+                    <div class="test-meta">
+                        <span>❓ ${t.questions} Questions</span>
+                        <span>⏱️ ${t.duration}</span>
+                        <span class="badge badge-blue">${t.subject}</span>
+                    </div>
+                </div>
+                <button class="start-btn" onclick="alert('Starting ${t.name}')">Start ▶</button>
+            </div>`).join('')}
+        </div>
+
+        <div class="tab-content" data-tab="topic" data-group="mock">
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem">
+                ${['Number System (20 Qs)','Percentage & Profit (25 Qs)','Time & Work (20 Qs)','Blood Relations (15 Qs)','Coding-Decoding (20 Qs)','History of India (30 Qs)','Indian Constitution (25 Qs)','Geography - India (30 Qs)','Current Affairs Mar-2024 (50 Qs)','Science - Physics (20 Qs)','Economy & Finance (25 Qs)','Awards & Sports (20 Qs)'].map(t=>`
+                <div style="background:white;border-radius:12px;padding:1.2rem;box-shadow:0 2px 10px rgba(0,0,0,0.07);display:flex;justify-content:space-between;align-items:center;gap:1rem">
+                    <div>
+                        <h4 style="font-size:0.92rem;color:#1a1a2e;margin-bottom:0.3rem">${t}</h4>
+                        <small style="color:#999">Topic Test</small>
+                    </div>
+                    <button class="exam-btn info-btn" style="padding:0.4rem 1rem;border-radius:8px;font-size:0.82rem;white-space:nowrap" onclick="alert('Starting ${t}')">Start</button>
+                </div>`).join('')}
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>📚 Exam Guidance Hub</h4><p>Your go-to portal for government exam information.</p></div>
+            <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="papers.html">Question Papers</a></li><li><a href="study-material.html">Study Material</a></li></ul></div>
+            <div class="footer-section"><h4>Contact</h4><p>📧 info@examhub.com</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Government Exam Portal. All rights reserved.</p></div>
+    </footer>
+    <script src="../script.js"></script>
+    <script>document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));</script>
+</body>
+</html>

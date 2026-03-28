@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admit Cards - Exam Guidance Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand"><a href="../index.html" style="text-decoration:none;color:white;"><h1>📚 Exam Guidance Hub</h1><p class="tagline">Your Complete Guide to Government Examinations</p></a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="dropdown"><a href="jobs.html" class="nav-link">Jobs ▾</a><ul class="dropdown-menu"><li><a href="jobs.html">All Jobs</a></li><li><a href="central-jobs.html">Central Govt</a></li><li><a href="state-jobs.html">State Govt</a></li></ul></li>
+                <li class="dropdown"><a href="notifications.html" class="nav-link active">Notifications ▾</a><ul class="dropdown-menu"><li><a href="notifications.html">All Notifications</a></li><li><a href="admit-card.html">Admit Cards</a></li><li><a href="results.html">Results</a></li></ul></li>
+                <li class="dropdown"><a href="syllabus.html" class="nav-link">Syllabus ▾</a><ul class="dropdown-menu"><li><a href="syllabus.html">Syllabus</a></li><li><a href="exam-pattern.html">Exam Pattern</a></li><li><a href="cut-off.html">Cut-off</a></li></ul></li>
+                <li><a href="papers.html" class="nav-link">Question Papers</a></li>
+                <li><a href="study-material.html" class="nav-link">Study Material</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <a href="notifications.html">Notifications</a> <span>›</span> <span>Admit Cards</span></div>
+        <h1>🪪 Admit Card / Hall Ticket</h1>
+        <p>Download your exam admit cards. Always check your exam city and date carefully.</p>
+    </section>
+
+    <div class="page-content">
+        <div style="background:#fff3cd;border-left:5px solid #ffc107;padding:1rem 1.5rem;border-radius:10px;margin-bottom:2rem;">
+            <strong>⚠️ Important:</strong> Always download admit card from official website only. Do NOT share your admit card with anyone.
+        </div>
+
+        <div class="stats-row">
+            <div class="stats-box"><div class="num">8</div><div class="lbl">Available Now</div></div>
+            <div class="stats-box"><div class="num">3</div><div class="lbl">Releasing Soon</div></div>
+            <div class="stats-box"><div class="num">5</div><div class="lbl">Exam Dates This Month</div></div>
+        </div>
+
+        <h2 style="font-family:'Playfair Display',serif;color:#1a1a2e;margin-bottom:1.5rem">📋 Available Admit Cards</h2>
+        <div class="notifications-container" id="admitContainer"></div>
+
+        <h2 style="font-family:'Playfair Display',serif;color:#1a1a2e;margin:2rem 0 1.5rem">📌 Releasing Soon</h2>
+        <div class="notifications-container" id="upcomingAdmit"></div>
+
+        <div style="background:white;border-radius:16px;padding:2rem;box-shadow:0 2px 15px rgba(0,0,0,0.07);margin-top:2rem">
+            <h3 style="font-family:'Playfair Display',serif;color:#1a1a2e;margin-bottom:1.5rem">📝 Documents to Carry on Exam Day</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem">
+                <div style="background:#f0f4ff;border-radius:10px;padding:1rem;border-left:4px solid #667eea"><strong>✅ Admit Card</strong><br><small>Printed copy (both sides)</small></div>
+                <div style="background:#f0f4ff;border-radius:10px;padding:1rem;border-left:4px solid #667eea"><strong>🪪 Photo ID</strong><br><small>Aadhar, PAN, Passport, etc.</small></div>
+                <div style="background:#f0f4ff;border-radius:10px;padding:1rem;border-left:4px solid #667eea"><strong>📷 Photographs</strong><br><small>Recent passport-size (2-3 copies)</small></div>
+                <div style="background:#f0f4ff;border-radius:10px;padding:1rem;border-left:4px solid #667eea"><strong>📑 Category Certificate</strong><br><small>SC/ST/OBC if applicable</small></div>
+                <div style="background:#f0f4ff;border-radius:10px;padding:1rem;border-left:4px solid #667eea"><strong>🖊️ Pen</strong><br><small>Blue/black ballpoint only</small></div>
+                <div style="background:#f0f4ff;border-radius:10px;padding:1rem;border-left:4px solid #667eea"><strong>🚫 No Mobile Phone</strong><br><small>Strictly prohibited in exam hall</small></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>📚 Exam Guidance Hub</h4><p>Your go-to portal for government exam information.</p></div>
+            <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="results.html">Results</a></li><li><a href="notifications.html">Notifications</a></li></ul></div>
+            <div class="footer-section"><h4>Contact</h4><p>📧 info@examhub.com</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Government Exam Portal. All rights reserved.</p></div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        const admitCards = [
+            { name:"SSC CGL Tier-I 2024", org:"SSC", examDate:"2024-04-05", available:true, urgent:true },
+            { name:"UPSC CSE Prelims 2024", org:"UPSC", examDate:"2024-05-26", available:true, urgent:false },
+            { name:"RRB NTPC CBT-1 2024", org:"RRB", examDate:"2024-04-15", available:true, urgent:true },
+            { name:"IBPS PO Prelims 2024", org:"IBPS", examDate:"2024-10-19", available:true, urgent:false },
+            { name:"State Police Exam 2024", org:"State Police", examDate:"2024-05-01", available:true, urgent:false },
+            { name:"SSC CHSL 2024 Tier-I", org:"SSC", examDate:"2024-04-12", available:true, urgent:true },
+            { name:"CTET 2024", org:"CBSE", examDate:"2024-07-07", available:true, urgent:false },
+            { name:"Bank Clerk Prelims 2024", org:"IBPS", examDate:"2024-08-24", available:true, urgent:false },
+        ];
+        const upcoming = [
+            { name:"UPSC CAPF AC 2024", org:"UPSC", expectedDate:"May 2024" },
+            { name:"SSC MTS 2024", org:"SSC", expectedDate:"June 2024" },
+            { name:"RRB Group D 2024", org:"RRB", expectedDate:"July 2024" },
+        ];
+
+        document.getElementById('admitContainer').innerHTML = admitCards.map(a => `
+            <div class="notification-card ${a.urgent ? 'urgent' : ''}">
+                <div class="notification-header">
+                    <h3 class="notification-title">🪪 ${a.name}</h3>
+                    <span class="notification-date">${a.urgent ? '🔴 URGENT' : '✅ Available'}</span>
+                </div>
+                <div class="notification-meta">
+                    <span class="meta-badge">🏢 ${a.org}</span>
+                    <span class="meta-badge">📅 Exam: ${new Date(a.examDate).toLocaleDateString('en-IN',{year:'numeric',month:'short',day:'numeric'})}</span>
+                    <button class="exam-btn apply-btn" style="padding:0.3rem 1.5rem;font-size:0.82rem;border-radius:20px;margin-left:auto" onclick="alert('Downloading admit card for ${a.name}')">📥 Download</button>
+                </div>
+            </div>`).join('');
+
+        document.getElementById('upcomingAdmit').innerHTML = upcoming.map(u => `
+            <div class="notification-card upcoming">
+                <div class="notification-header">
+                    <h3 class="notification-title">📌 ${u.name}</h3>
+                    <span class="notification-date">Upcoming</span>
+                </div>
+                <div class="notification-meta">
+                    <span class="meta-badge">🏢 ${u.org}</span>
+                    <span class="meta-badge">📅 Expected: ${u.expectedDate}</span>
+                    <button class="exam-btn info-btn" style="padding:0.3rem 1.5rem;font-size:0.82rem;border-radius:20px;margin-left:auto" onclick="alert('Set reminder for ${u.name}')">🔔 Set Alert</button>
+                </div>
+            </div>`).join('');
+
+        document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));
+    </script>
+</body>
+</html>

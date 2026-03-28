@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Government Jobs 2024 - Exam Guidance Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="../index.html" style="text-decoration:none;color:white;">
+                    <h1>📚 Exam Guidance Hub</h1>
+                    <p class="tagline">Your Complete Guide to Government Examinations</p>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="dropdown"><a href="jobs.html" class="nav-link active">Jobs ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jobs.html">All Jobs</a></li>
+                        <li><a href="central-jobs.html">Central Govt Jobs</a></li>
+                        <li><a href="state-jobs.html">State Govt Jobs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="notifications.html" class="nav-link">Notifications ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="notifications.html">All Notifications</a></li>
+                        <li><a href="admit-card.html">Admit Cards</a></li>
+                        <li><a href="results.html">Results</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="syllabus.html" class="nav-link">Syllabus ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="syllabus.html">Exam Syllabus</a></li>
+                        <li><a href="exam-pattern.html">Exam Pattern</a></li>
+                        <li><a href="cut-off.html">Cut-off Marks</a></li>
+                    </ul>
+                </li>
+                <li><a href="papers.html" class="nav-link">Question Papers</a></li>
+                <li><a href="study-material.html" class="nav-link">Study Material</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> <span>›</span> <span>Jobs</span>
+        </div>
+        <h1>💼 Latest Government Jobs 2024</h1>
+        <p>Find all current Central & State Government job openings. Updated daily with official notifications.</p>
+    </section>
+
+    <div class="page-content">
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stats-box"><div class="num">500+</div><div class="lbl">Total Vacancies</div></div>
+            <div class="stats-box"><div class="num">8</div><div class="lbl">Active Exams</div></div>
+            <div class="stats-box"><div class="num">5</div><div class="lbl">Central Level</div></div>
+            <div class="stats-box"><div class="num">3</div><div class="lbl">State Level</div></div>
+            <div class="stats-box"><div class="num">2024</div><div class="lbl">Notification Year</div></div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-row">
+            <select id="levelFilter" onchange="applyFilters()">
+                <option value="">All Levels</option>
+                <option value="central">Central Govt</option>
+                <option value="state">State Govt</option>
+            </select>
+            <select id="eligFilter" onchange="applyFilters()">
+                <option value="">All Eligibility</option>
+                <option value="10th">10th Pass</option>
+                <option value="12th">12th Pass</option>
+                <option value="graduate">Graduate</option>
+                <option value="bed">B.Ed/Diploma</option>
+            </select>
+            <input type="text" id="searchJob" placeholder="🔍 Search jobs..." oninput="applyFilters()">
+            <button onclick="resetFilters()">Reset</button>
+        </div>
+
+        <!-- Jobs Table -->
+        <div class="table-wrapper">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Exam / Post</th>
+                        <th>Level</th>
+                        <th>Vacancies</th>
+                        <th>Eligibility</th>
+                        <th>Salary Range</th>
+                        <th>Notification</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="jobsTableBody"></tbody>
+            </table>
+        </div>
+
+        <!-- Job Cards Grid -->
+        <h2 style="font-family:'Playfair Display',serif;color:#1a1a2e;margin-bottom:1.5rem">📋 Detailed Job Cards</h2>
+        <div class="exams-container" id="allJobsGrid"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>📚 Exam Guidance Hub</h4><p>Your go-to portal for government exam information across India.</p></div>
+            <div class="footer-section"><h4>Quick Links</h4><ul>
+                <li><a href="../index.html">Home</a></li><li><a href="notifications.html">Notifications</a></li>
+                <li><a href="syllabus.html">Syllabus</a></li><li><a href="papers.html">Question Papers</a></li>
+            </ul></div>
+            <div class="footer-section"><h4>Contact</h4><p>📧 info@examhub.com</p><p>📞 +91-9876543210</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Government Exam Portal. All rights reserved.</p></div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        const allJobs = [
+            { id:1, name:"UPSC Civil Services", level:"central", posts:150, eligibility:"Graduate", salary:"₹56,100 - ₹1,77,500", notification:"2024-01-15", dept:"UPSC", deadline:"2024-04-15" },
+            { id:2, name:"SSC CHSL", level:"central", posts:3500, eligibility:"12th Pass", salary:"₹18,000 - ₹56,100", notification:"2024-02-01", dept:"SSC", deadline:"2024-03-31" },
+            { id:3, name:"RRB NTPC", level:"central", posts:35000, eligibility:"12th Pass", salary:"₹19,900 - ₹35,400", notification:"2024-01-20", dept:"RRB", deadline:"2024-03-20" },
+            { id:4, name:"State PSC Exam", level:"state", posts:800, eligibility:"Graduate", salary:"₹54,000 - ₹1,42,400", notification:"2024-03-10", dept:"State PSC", deadline:"2024-04-30" },
+            { id:5, name:"Bank PO (IBPS)", level:"central", posts:4000, eligibility:"Graduate", salary:"₹23,700 - ₹42,020", notification:"2024-01-25", dept:"IBPS", deadline:"2024-04-20" },
+            { id:6, name:"LIC AAO", level:"central", posts:600, eligibility:"Graduate", salary:"₹24,000 - ₹44,000", notification:"2024-02-14", dept:"LIC", deadline:"2024-03-25" },
+            { id:7, name:"Police Recruitment", level:"state", posts:5000, eligibility:"12th Pass", salary:"₹20,000 - ₹49,000", notification:"2024-03-05", dept:"State Police", deadline:"2024-05-01" },
+            { id:8, name:"Teacher Recruitment", level:"state", posts:10000, eligibility:"B.Ed/Diploma", salary:"₹25,000 - ₹50,000", notification:"2024-02-28", dept:"State Edu Dept", deadline:"2024-04-10" },
+            { id:9, name:"SSC CGL 2024", level:"central", posts:17000, eligibility:"Graduate", salary:"₹25,500 - ₹81,100", notification:"2024-03-20", dept:"SSC", deadline:"2024-04-25" },
+            { id:10, name:"IBPS Clerk", level:"central", posts:6000, eligibility:"Graduate", salary:"₹11,765 - ₹31,540", notification:"2024-03-15", dept:"IBPS", deadline:"2024-04-15" }
+        ];
+
+        let filtered = [...allJobs];
+
+        function renderTable(jobs) {
+            document.getElementById('jobsTableBody').innerHTML = jobs.map((j,i) => `
+                <tr>
+                    <td>${i+1}</td>
+                    <td><strong>${j.name}</strong><br><small style="color:#999">${j.dept}</small></td>
+                    <td><span class="badge ${j.level==='central'?'badge-blue':'badge-purple'}">${j.level==='central'?'Central':'State'}</span></td>
+                    <td><strong>${j.posts.toLocaleString()}</strong></td>
+                    <td>${j.eligibility}</td>
+                    <td>${j.salary}</td>
+                    <td>${formatDate(j.notification)}</td>
+                    <td><button class="exam-btn apply-btn" style="white-space:nowrap;padding:0.4rem 1rem" onclick="alert('Redirecting to official portal...')">Apply Now</button></td>
+                </tr>`).join('');
+        }
+
+        function renderCards(jobs) {
+            document.getElementById('allJobsGrid').innerHTML = jobs.map(j => `
+                <div class="exam-card">
+                    <div class="exam-header">
+                        <h3>${j.name}</h3>
+                        <span class="exam-level">${j.level==='central'?'🏛️ Central':'🏢 State'}</span>
+                    </div>
+                    <div class="exam-body">
+                        <div class="exam-detail"><span class="exam-detail-label">🏢 Dept:</span><span class="exam-detail-value">${j.dept}</span></div>
+                        <div class="exam-detail"><span class="exam-detail-label">📋 Posts:</span><span class="exam-detail-value">${j.posts.toLocaleString()}</span></div>
+                        <div class="exam-detail"><span class="exam-detail-label">🎓 Eligibility:</span><span class="exam-detail-value">${j.eligibility}</span></div>
+                        <div class="exam-detail"><span class="exam-detail-label">💰 Salary:</span><span class="exam-detail-value">${j.salary}</span></div>
+                        <div class="exam-detail"><span class="exam-detail-label">📅 Last Date:</span><span class="exam-detail-value" style="color:#dc3545;font-weight:600">${formatDate(j.deadline)}</span></div>
+                    </div>
+                    <div class="exam-footer">
+                        <button class="exam-btn info-btn" onclick="alert('Full details for ${j.name}')">View Details</button>
+                        <button class="exam-btn apply-btn" onclick="alert('Redirecting to official website...')">Apply Now</button>
+                    </div>
+                </div>`).join('');
+        }
+
+        function applyFilters() {
+            const level = document.getElementById('levelFilter').value;
+            const elig = document.getElementById('eligFilter').value;
+            const search = document.getElementById('searchJob').value.toLowerCase();
+            filtered = allJobs.filter(j => {
+                const matchLevel = !level || j.level === level;
+                const matchElig = !elig || j.eligibility.toLowerCase().includes(elig);
+                const matchSearch = !search || j.name.toLowerCase().includes(search) || j.dept.toLowerCase().includes(search);
+                return matchLevel && matchElig && matchSearch;
+            });
+            renderTable(filtered);
+            renderCards(filtered);
+        }
+
+        function resetFilters() {
+            document.getElementById('levelFilter').value = '';
+            document.getElementById('eligFilter').value = '';
+            document.getElementById('searchJob').value = '';
+            filtered = [...allJobs];
+            renderTable(filtered);
+            renderCards(filtered);
+        }
+
+        function formatDate(s) { return new Date(s).toLocaleDateString('en-IN',{year:'numeric',month:'short',day:'numeric'}); }
+
+        renderTable(allJobs);
+        renderCards(allJobs);
+
+        document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));
+    </script>
+</body>
+</html>

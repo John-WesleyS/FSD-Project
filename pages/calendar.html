@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Calendar 2024 - Exam Guidance Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .calendar-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:2px; margin-bottom:2rem; }
+        .cal-header { background:#667eea; color:white; text-align:center; padding:0.8rem 0.3rem; font-weight:700; font-size:0.85rem; }
+        .cal-day { background:white; min-height:80px; padding:0.4rem; border:1px solid #eee; position:relative; font-size:0.85rem; }
+        .cal-day.other-month { background:#f8f9fa; color:#ccc; }
+        .cal-day.today { background:#fff8e1; border:2px solid #f39c12; }
+        .cal-day-num { font-weight:700; color:#333; margin-bottom:0.3rem; }
+        .cal-event { font-size:0.7rem; padding:0.15rem 0.3rem; border-radius:3px; margin-bottom:0.2rem; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+        .cal-event.exam { background:#d5f5e3; color:#1e8449; }
+        .cal-event.deadline { background:#fadbd8; color:#c0392b; }
+        .cal-event.result { background:#d6eaf8; color:#1a5276; }
+        .cal-event.admit { background:#fef9e7; color:#7d6608; }
+        .month-nav { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem; }
+        .month-nav button { padding:0.6rem 1.2rem; background:#667eea; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:1rem; }
+        .legend { display:flex; gap:1.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+        .legend-item { display:flex; align-items:center; gap:0.4rem; font-size:0.85rem; }
+        .legend-dot { width:12px; height:12px; border-radius:3px; }
+        .timeline-event { background:white; border-radius:10px; padding:1.2rem 1.5rem; margin-bottom:1rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); display:flex; align-items:center; gap:1.5rem; border-left:5px solid #667eea; transition:transform 0.2s; }
+        .timeline-event:hover { transform:translateX(5px); }
+        .timeline-event.exam-day { border-left-color:#27ae60; }
+        .timeline-event.deadline-day { border-left-color:#e74c3c; }
+        .timeline-event.result-day { border-left-color:#3498db; }
+        .tl-date { min-width:80px; text-align:center; background:#f0f3ff; padding:0.6rem; border-radius:8px; }
+        .tl-date .day { font-size:1.6rem; font-weight:800; color:#667eea; line-height:1; }
+        .tl-date .month { font-size:0.75rem; color:#666; text-transform:uppercase; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <a href="../index.html" style="text-decoration:none;color:white;">
+                    <h1>📚 Exam Guidance Hub</h1>
+                    <p class="tagline">Your Complete Guide to Government Examinations</p>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="dropdown"><a href="jobs.html" class="nav-link">Jobs ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="jobs.html">All Jobs</a></li>
+                        <li><a href="central-jobs.html">Central Govt Jobs</a></li>
+                        <li><a href="state-jobs.html">State Govt Jobs</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="notifications.html" class="nav-link">Notifications ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="notifications.html">All Notifications</a></li>
+                        <li><a href="admit-card.html">Admit Cards</a></li>
+                        <li><a href="results.html">Results</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="syllabus.html" class="nav-link">Syllabus ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="syllabus.html">Exam Syllabus</a></li>
+                        <li><a href="exam-pattern.html">Exam Pattern</a></li>
+                        <li><a href="cut-off.html">Cut-off Marks</a></li>
+                    </ul>
+                </li>
+                <li><a href="papers.html" class="nav-link">Question Papers</a></li>
+                <li><a href="study-material.html" class="nav-link">Study Material</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-hero" style="background:linear-gradient(135deg,#1a2a4a 0%,#1e3a5f 50%,#0f3460 100%);">
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a> <span>›</span> <span>Exam Calendar</span>
+        </div>
+        <h1>📅 Exam Calendar 2024</h1>
+        <p>Never miss an exam date, application deadline or result announcement. Plan your preparation accordingly.</p>
+    </section>
+
+    <div class="page-content">
+
+        <div class="stats-row">
+            <div class="stats-box"><div class="num">35+</div><div class="lbl">Upcoming Exams</div></div>
+            <div class="stats-box"><div class="num">12</div><div class="lbl">Deadlines This Month</div></div>
+            <div class="stats-box"><div class="num">8</div><div class="lbl">Results Pending</div></div>
+            <div class="stats-box"><div class="num">2024</div><div class="lbl">Complete Schedule</div></div>
+        </div>
+
+        <!-- View Toggle -->
+        <div style="display:flex;gap:1rem;margin-bottom:1.5rem;">
+            <button onclick="showView('calendar')" id="calBtn" style="padding:0.6rem 1.4rem;background:#667eea;color:white;border:none;border-radius:8px;cursor:pointer;font-weight:600;">📅 Calendar View</button>
+            <button onclick="showView('list')" id="listBtn" style="padding:0.6rem 1.4rem;background:#f0f3ff;color:#667eea;border:2px solid #667eea;border-radius:8px;cursor:pointer;font-weight:600;">📋 List View</button>
+        </div>
+
+        <!-- Calendar View -->
+        <div id="calendarView">
+            <div class="month-nav">
+                <button onclick="prevMonth()">◀ Previous</button>
+                <h2 id="monthTitle" style="font-size:1.4rem;color:#1a1a2e;"></h2>
+                <button onclick="nextMonth()">Next ▶</button>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item"><div class="legend-dot" style="background:#d5f5e3;"></div> Exam Day</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#fadbd8;"></div> Application Deadline</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#d6eaf8;"></div> Result / Merit List</div>
+                <div class="legend-item"><div class="legend-dot" style="background:#fef9e7;"></div> Admit Card</div>
+            </div>
+
+            <div class="calendar-grid" id="calendarGrid"></div>
+        </div>
+
+        <!-- List View -->
+        <div id="listView" style="display:none;">
+            <div class="filters-row" style="margin-bottom:1.5rem;">
+                <select id="listTypeFilter" onchange="renderList()">
+                    <option value="">All Events</option>
+                    <option value="exam">Exam Dates</option>
+                    <option value="deadline">Deadlines</option>
+                    <option value="result">Results</option>
+                    <option value="admit">Admit Cards</option>
+                </select>
+                <select id="listMonthFilter" onchange="renderList()">
+                    <option value="">All Months</option>
+                    <option value="3">April 2024</option>
+                    <option value="4">May 2024</option>
+                    <option value="5">June 2024</option>
+                </select>
+            </div>
+            <div id="listContainer"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>📚 Exam Guidance Hub</h4>
+                <p>Your complete guide for all Central & State Government Examinations in India.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="jobs.html">All Jobs</a></li>
+                    <li><a href="notifications.html">Notifications</a></li>
+                    <li><a href="admit-card.html">Admit Cards</a></li>
+                    <li><a href="results.html">Results</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="syllabus.html">Syllabus</a></li>
+                    <li><a href="papers.html">Question Papers</a></li>
+                    <li><a href="mock-test.html">Mock Tests</a></li>
+                    <li><a href="answer-key.html">Answer Keys</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>📧 info@examhub.com</p>
+                <p>📞 +91-9876543210</p>
+                <p>📍 Exam Hub, India</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Government Exam Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const events = [
+            { date:"2024-04-05", type:"exam", title:"SSC CGL Tier I 2024" },
+            { date:"2024-04-08", type:"deadline", title:"UPSC CSE Application Deadline" },
+            { date:"2024-04-10", type:"deadline", title:"State Teacher Recruitment Deadline" },
+            { date:"2024-04-15", type:"admit", title:"RRB NTPC Admit Card Release" },
+            { date:"2024-04-18", type:"exam", title:"SSC MTS Paper I 2024" },
+            { date:"2024-04-20", type:"deadline", title:"SSC CHSL Application Last Date" },
+            { date:"2024-04-20", type:"result", title:"RRB Group D Phase I Result" },
+            { date:"2024-04-22", type:"exam", title:"RPSC RAS Prelims 2024" },
+            { date:"2024-04-25", type:"deadline", title:"RRB ALP Application Deadline" },
+            { date:"2024-04-28", type:"exam", title:"NDA/Naval Academy Exam 2024" },
+            { date:"2024-04-30", type:"deadline", title:"IBPS PO Application Deadline" },
+            { date:"2024-05-01", type:"exam", title:"State Police Prelims Exam" },
+            { date:"2024-05-05", type:"admit", title:"SSC CGL Tier II Admit Card" },
+            { date:"2024-05-08", type:"deadline", title:"UP Police Constable Deadline" },
+            { date:"2024-05-10", type:"exam", title:"AP Police Constable Written Test" },
+            { date:"2024-05-12", type:"result", title:"TNPSC Group II Prelims Result" },
+            { date:"2024-05-15", type:"deadline", title:"Indian Army Agniveer Deadline" },
+            { date:"2024-05-20", type:"exam", title:"UPSC CAPF Assistant Commandant" },
+            { date:"2024-05-26", type:"exam", title:"UPSC Civil Services Prelims 2024" },
+            { date:"2024-06-01", type:"result", title:"SSC CGL Tier I Result 2024" },
+            { date:"2024-06-05", type:"admit", title:"UPSC Prelims Admit Card" },
+            { date:"2024-06-10", type:"exam", title:"IBPS PO Prelims 2024" },
+            { date:"2024-06-15", type:"result", title:"Bank PO Prelims Result" },
+        ];
+
+        let currentYear = 2024;
+        let currentMonth = 3; // April = index 3
+
+        const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        const dayNames = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
+        function renderCalendar() {
+            document.getElementById('monthTitle').textContent = `${monthNames[currentMonth]} ${currentYear}`;
+            const grid = document.getElementById('calendarGrid');
+
+            // Headers
+            let html = dayNames.map(d => `<div class="cal-header">${d}</div>`).join('');
+
+            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const daysInPrev = new Date(currentYear, currentMonth, 0).getDate();
+            const today = new Date();
+
+            // Prev month days
+            for (let i = firstDay - 1; i >= 0; i--) {
+                html += `<div class="cal-day other-month"><div class="cal-day-num">${daysInPrev - i}</div></div>`;
+            }
+
+            // Current month days
+            for (let d = 1; d <= daysInMonth; d++) {
+                const dateStr = `${currentYear}-${String(currentMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+                const isToday = today.getFullYear()===currentYear && today.getMonth()===currentMonth && today.getDate()===d;
+                const dayEvents = events.filter(e => e.date === dateStr);
+                let evtHtml = dayEvents.map(e => `<div class="cal-event ${e.type}" title="${e.title}" onclick="alert('${e.title}\nDate: ${dateStr}')">${e.title.length>18?e.title.substring(0,18)+'…':e.title}</div>`).join('');
+                html += `<div class="cal-day${isToday?' today':''}"><div class="cal-day-num">${d}</div>${evtHtml}</div>`;
+            }
+
+            // Next month padding
+            const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
+            for (let i = 1; i <= totalCells - firstDay - daysInMonth; i++) {
+                html += `<div class="cal-day other-month"><div class="cal-day-num">${i}</div></div>`;
+            }
+
+            grid.innerHTML = html;
+        }
+
+        function prevMonth() { if (currentMonth === 0) { currentMonth = 11; currentYear--; } else { currentMonth--; } renderCalendar(); }
+        function nextMonth() { if (currentMonth === 11) { currentMonth = 0; currentYear++; } else { currentMonth++; } renderCalendar(); }
+
+        function renderList() {
+            const typeF = document.getElementById('listTypeFilter').value;
+            const monthF = document.getElementById('listMonthFilter').value;
+            let filtered = events.filter(e => {
+                const matchType = !typeF || e.type === typeF;
+                const matchMonth = !monthF || new Date(e.date).getMonth() === parseInt(monthF);
+                return matchType && matchMonth;
+            });
+            filtered.sort((a,b) => new Date(a.date) - new Date(b.date));
+            const icons = { exam:'📝', deadline:'⏰', result:'🏆', admit:'🎫' };
+            const colors = { exam:'exam-day', deadline:'deadline-day', result:'result-day', admit:'' };
+            document.getElementById('listContainer').innerHTML = filtered.map(e => {
+                const d = new Date(e.date);
+                return `<div class="timeline-event ${colors[e.type]}">
+                    <div class="tl-date"><div class="day">${d.getDate()}</div><div class="month">${monthNames[d.getMonth()].substring(0,3)} ${d.getFullYear()}</div></div>
+                    <div><span style="font-size:1.2rem;margin-right:0.5rem;">${icons[e.type]}</span><strong>${e.title}</strong><br><span style="font-size:0.85rem;color:#666;text-transform:capitalize;">${e.type} Event</span></div>
+                </div>`;
+            }).join('') || '<p style="text-align:center;padding:2rem;color:#666;">No events found.</p>';
+        }
+
+        function showView(view) {
+            if (view === 'calendar') {
+                document.getElementById('calendarView').style.display = 'block';
+                document.getElementById('listView').style.display = 'none';
+                document.getElementById('calBtn').style.background = '#667eea';
+                document.getElementById('calBtn').style.color = 'white';
+                document.getElementById('listBtn').style.background = '#f0f3ff';
+                document.getElementById('listBtn').style.color = '#667eea';
+            } else {
+                document.getElementById('calendarView').style.display = 'none';
+                document.getElementById('listView').style.display = 'block';
+                document.getElementById('calBtn').style.background = '#f0f3ff';
+                document.getElementById('calBtn').style.color = '#667eea';
+                document.getElementById('listBtn').style.background = '#667eea';
+                document.getElementById('listBtn').style.color = 'white';
+                renderList();
+            }
+        }
+
+        renderCalendar();
+        document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));
+    </script>
+</body>
+</html>

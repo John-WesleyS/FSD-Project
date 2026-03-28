@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Notifications - Exam Guidance Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand"><a href="../index.html" style="text-decoration:none;color:white;"><h1>📚 Exam Guidance Hub</h1><p class="tagline">Your Complete Guide to Government Examinations</p></a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="dropdown"><a href="jobs.html" class="nav-link">Jobs ▾</a><ul class="dropdown-menu"><li><a href="jobs.html">All Jobs</a></li><li><a href="central-jobs.html">Central Govt</a></li><li><a href="state-jobs.html">State Govt</a></li></ul></li>
+                <li class="dropdown"><a href="notifications.html" class="nav-link active">Notifications ▾</a><ul class="dropdown-menu"><li><a href="notifications.html">All Notifications</a></li><li><a href="admit-card.html">Admit Cards</a></li><li><a href="results.html">Results</a></li></ul></li>
+                <li class="dropdown"><a href="syllabus.html" class="nav-link">Syllabus ▾</a><ul class="dropdown-menu"><li><a href="syllabus.html">Exam Syllabus</a></li><li><a href="exam-pattern.html">Exam Pattern</a></li><li><a href="cut-off.html">Cut-off Marks</a></li></ul></li>
+                <li><a href="papers.html" class="nav-link">Question Papers</a></li>
+                <li><a href="study-material.html" class="nav-link">Study Material</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <span>Notifications</span></div>
+        <h1>🔔 Latest Exam Notifications</h1>
+        <p>Stay updated with all government exam notifications, deadlines, and important alerts.</p>
+    </section>
+
+    <div class="page-content">
+        <div class="stats-row">
+            <div class="stats-box"><div class="num">12</div><div class="lbl">Total Notifications</div></div>
+            <div class="stats-box"><div class="num">4</div><div class="lbl">Urgent Alerts</div></div>
+            <div class="stats-box"><div class="num">5</div><div class="lbl">Latest Updates</div></div>
+            <div class="stats-box"><div class="num">3</div><div class="lbl">Upcoming Events</div></div>
+        </div>
+
+        <!-- Notice Board -->
+        <div style="background:#fff3cd;border-left:5px solid #ffc107;padding:1rem 1.5rem;border-radius:10px;margin-bottom:2rem;">
+            <strong>📢 Notice Board:</strong> Multiple examination notifications have been released this month. Check deadlines carefully!
+        </div>
+
+        <!-- Tabs -->
+        <div class="tab-nav">
+            <button class="tab-btn active" data-tab="all" data-group="notif" onclick="switchTab('all','notif')">All Notifications</button>
+            <button class="tab-btn" data-tab="urgent" data-group="notif" onclick="switchTab('urgent','notif')">🔴 Urgent</button>
+            <button class="tab-btn" data-tab="latest" data-group="notif" onclick="switchTab('latest','notif')">🆕 Latest</button>
+            <button class="tab-btn" data-tab="upcoming" data-group="notif" onclick="switchTab('upcoming','notif')">📌 Upcoming</button>
+        </div>
+
+        <div class="tab-content active" data-tab="all" data-group="notif" id="notif-all"></div>
+        <div class="tab-content" data-tab="urgent" data-group="notif" id="notif-urgent"></div>
+        <div class="tab-content" data-tab="latest" data-group="notif" id="notif-latest"></div>
+        <div class="tab-content" data-tab="upcoming" data-group="notif" id="notif-upcoming"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>📚 Exam Guidance Hub</h4><p>Your go-to portal for government exam information.</p></div>
+            <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="jobs.html">Jobs</a></li><li><a href="papers.html">Papers</a></li></ul></div>
+            <div class="footer-section"><h4>Contact</h4><p>📧 info@examhub.com</p><p>📞 +91-9876543210</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Government Exam Portal. All rights reserved.</p></div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        const allNotifs = [
+            { id:1, title:"UPSC Civil Services 2024 Notification Released", level:"central", status:"latest", date:"2024-03-25", deadline:"2024-04-15", description:"UPSC released notification for Civil Services 2024. Total 150 vacancies across IAS, IPS, IFS and other services.", category:"recruitment" },
+            { id:2, title:"SSC CGL 2024 Admit Card Released", level:"central", status:"urgent", date:"2024-03-20", deadline:"2024-04-05", description:"SSC released admit cards for CGL 2024. Exam date is April 5, 2024. Download immediately from official website.", category:"admit-card" },
+            { id:3, title:"RRB NTPC Previous Year Papers Available", level:"central", status:"latest", date:"2024-03-22", deadline:null, description:"Previous year papers for RRB NTPC are now available for free download.", category:"resources" },
+            { id:4, title:"State Teacher Recruitment Registration Open", level:"state", status:"urgent", date:"2024-03-24", deadline:"2024-04-10", description:"State Education Department opened registration for Teacher Recruitment Drive. 10,000 vacancies announced.", category:"recruitment" },
+            { id:5, title:"Bank PO 2024 Application Deadline Extended", level:"central", status:"latest", date:"2024-03-21", deadline:"2024-04-20", description:"Bank PO 2024 application deadline extended to April 20, 2024. Apply immediately.", category:"recruitment" },
+            { id:6, title:"Police Recruitment Exam Schedule Announced", level:"state", status:"upcoming", date:"2024-03-23", deadline:"2024-05-01", description:"State Police Department announced exam schedule. Preliminary exam on May 1, 2024.", category:"schedule" },
+            { id:7, title:"UPSC CSE 2023 Final Results Declared", level:"central", status:"latest", date:"2024-03-18", deadline:null, description:"UPSC declared final results for Civil Services Exam 2023. 1016 candidates selected.", category:"results" },
+            { id:8, title:"SSC MTS 2024 Notification Expected", level:"central", status:"upcoming", date:"2024-03-15", deadline:"2024-05-15", description:"SSC Multi-Tasking Staff 2024 notification expected in April. Approx 8000 vacancies.", category:"recruitment" },
+            { id:9, title:"State PSC Interview Dates Published", level:"state", status:"urgent", date:"2024-03-19", deadline:"2024-04-02", description:"State PSC published interview schedule for 2022 mains qualified candidates. Check official website.", category:"schedule" },
+            { id:10, title:"IBPS PO 2024 Registration Starts", level:"central", status:"latest", date:"2024-03-28", deadline:"2024-04-28", description:"IBPS PO 2024 online registration started. 4000+ vacancies. Graduate candidates can apply.", category:"recruitment" },
+            { id:11, title:"RRB Group D Result 2023 Out", level:"central", status:"latest", date:"2024-03-16", deadline:null, description:"RRB Group D 2023 result declared. Selected candidates to appear for document verification.", category:"results" },
+            { id:12, title:"CTET 2024 Notification Released", level:"central", status:"upcoming", date:"2024-03-10", deadline:"2024-04-30", description:"CTET 2024 notification released. Exam for Paper I & II on July 7, 2024.", category:"recruitment" }
+        ];
+
+        function renderNotifs(data, containerId) {
+            const el = document.getElementById(containerId);
+            if (!el) return;
+            el.innerHTML = data.map(n => `
+                <div class="notice-card ${n.status}">
+                    <div class="notice-icon">${getCatIcon(n.category)}</div>
+                    <div class="notice-body" style="flex:1">
+                        <h4>${n.title}</h4>
+                        <p>${n.description}</p>
+                        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.6rem">
+                            <span class="notice-date">📅 ${formatDate(n.date)}</span>
+                            ${n.deadline ? `<span style="color:#dc3545;font-weight:600;font-size:0.8rem">⏰ Deadline: ${formatDate(n.deadline)}</span>` : ''}
+                            <span class="meta-badge" style="font-size:0.78rem">${n.level==='central'?'🏛️ Central':'🏢 State'}</span>
+                            <span class="meta-badge" style="font-size:0.78rem">${getStatusLabel(n.status)}</span>
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:0.5rem">
+                        <button class="exam-btn info-btn" style="padding:0.5rem 1rem;font-size:0.82rem" onclick="alert('View full notification details')">View</button>
+                        ${n.deadline ? `<button class="exam-btn apply-btn" style="padding:0.5rem 1rem;font-size:0.82rem" onclick="alert('Apply Now')">Apply</button>` : ''}
+                    </div>
+                </div>`).join('');
+        }
+
+        function getCatIcon(c) {
+            return {recruitment:'📋',schedule:'📅','admit-card':'🪪',results:'🏆',resources:'📚'}[c]||'🔔';
+        }
+        function getStatusLabel(s) { return {latest:'🆕 Latest',urgent:'🔴 Urgent',upcoming:'📌 Upcoming'}[s]||s; }
+        function formatDate(s) { return new Date(s).toLocaleDateString('en-IN',{year:'numeric',month:'short',day:'numeric'}); }
+
+        renderNotifs(allNotifs, 'notif-all');
+        renderNotifs(allNotifs.filter(n=>n.status==='urgent'), 'notif-urgent');
+        renderNotifs(allNotifs.filter(n=>n.status==='latest'), 'notif-latest');
+        renderNotifs(allNotifs.filter(n=>n.status==='upcoming'), 'notif-upcoming');
+
+        document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));
+    </script>
+</body>
+</html>

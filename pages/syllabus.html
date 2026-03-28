@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Syllabus - Exam Guidance Hub</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .syllabus-box { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 2px 15px rgba(0,0,0,0.07); margin-bottom: 2rem; }
+        .syllabus-box h3 { font-family: 'Playfair Display',serif; font-size: 1.4rem; color: #1a1a2e; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 3px solid #667eea; }
+        .subject-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+        .subject-card { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; border-top: 4px solid #667eea; }
+        .subject-card h4 { color: #1a1a2e; font-size: 1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .subject-card ul { list-style: none; }
+        .subject-card ul li { font-size: 0.87rem; color: #555; padding: 0.35rem 0; border-bottom: 1px solid #e8e8e8; display: flex; align-items: flex-start; gap: 0.5rem; }
+        .subject-card ul li::before { content: '▸'; color: #667eea; flex-shrink: 0; }
+        .subject-card ul li:last-child { border-bottom: none; }
+        .exam-selector { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .exam-tab { padding: 0.7rem 1.5rem; border: 2px solid #667eea; background: white; color: #667eea; border-radius: 8px; cursor: pointer; font-family: inherit; font-weight: 600; transition: all 0.2s; }
+        .exam-tab.active, .exam-tab:hover { background: #667eea; color: white; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand"><a href="../index.html" style="text-decoration:none;color:white;"><h1>📚 Exam Guidance Hub</h1><p class="tagline">Your Complete Guide to Government Examinations</p></a></div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="dropdown"><a href="jobs.html" class="nav-link">Jobs ▾</a><ul class="dropdown-menu"><li><a href="jobs.html">All Jobs</a></li><li><a href="central-jobs.html">Central Govt</a></li><li><a href="state-jobs.html">State Govt</a></li></ul></li>
+                <li class="dropdown"><a href="notifications.html" class="nav-link">Notifications ▾</a><ul class="dropdown-menu"><li><a href="notifications.html">All Notifications</a></li><li><a href="admit-card.html">Admit Cards</a></li><li><a href="results.html">Results</a></li></ul></li>
+                <li class="dropdown"><a href="syllabus.html" class="nav-link active">Syllabus ▾</a><ul class="dropdown-menu"><li><a href="syllabus.html">Exam Syllabus</a></li><li><a href="exam-pattern.html">Exam Pattern</a></li><li><a href="cut-off.html">Cut-off Marks</a></li></ul></li>
+                <li><a href="papers.html" class="nav-link">Question Papers</a></li>
+                <li><a href="study-material.html" class="nav-link">Study Material</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <span>›</span> <span>Syllabus</span></div>
+        <h1>📖 Exam Syllabus 2024</h1>
+        <p>Complete, updated syllabus for all major government exams. Know exactly what to study.</p>
+    </section>
+
+    <div class="page-content">
+        <!-- Exam Selector -->
+        <div class="exam-selector">
+            <button class="exam-tab active" onclick="showSyllabus('upsc', this)">UPSC CSE</button>
+            <button class="exam-tab" onclick="showSyllabus('ssc', this)">SSC CGL</button>
+            <button class="exam-tab" onclick="showSyllabus('rrb', this)">RRB NTPC</button>
+            <button class="exam-tab" onclick="showSyllabus('bank', this)">Bank PO</button>
+            <button class="exam-tab" onclick="showSyllabus('police', this)">Police</button>
+            <button class="exam-tab" onclick="showSyllabus('teacher', this)">Teacher</button>
+        </div>
+
+        <!-- UPSC Syllabus -->
+        <div id="syl-upsc" class="syllabus-container">
+            <div class="syllabus-box">
+                <h3>🏛️ UPSC Civil Services Examination Syllabus</h3>
+                <div style="background:#e8f0ff;border-radius:10px;padding:1rem 1.5rem;margin-bottom:1.5rem;font-size:0.9rem;color:#1a1a2e">
+                    <strong>Exam Structure:</strong> Prelims (Objective) → Mains (Descriptive) → Interview (Personality Test)
+                </div>
+                <h4 style="margin-bottom:1rem;color:#667eea">📝 Prelims - General Studies Paper I (100 Questions)</h4>
+                <div class="subject-grid">
+                    <div class="subject-card">
+                        <h4>🌍 History & Culture</h4>
+                        <ul>
+                            <li>Ancient Indian History</li><li>Medieval Indian History</li><li>Modern Indian History</li>
+                            <li>Indian Art & Culture</li><li>World History</li><li>Freedom Struggle</li>
+                        </ul>
+                    </div>
+                    <div class="subject-card">
+                        <h4>🗺️ Geography</h4>
+                        <ul>
+                            <li>Indian Geography</li><li>World Geography</li><li>Physical Geography</li>
+                            <li>Climate & Environment</li><li>Natural Resources</li><li>Economic Geography</li>
+                        </ul>
+                    </div>
+                    <div class="subject-card">
+                        <h4>🏛️ Indian Polity</h4>
+                        <ul>
+                            <li>Indian Constitution</li><li>Political System</li><li>Panchayati Raj</li>
+                            <li>Public Policy</li><li>Rights Issues</li><li>Governance</li>
+                        </ul>
+                    </div>
+                    <div class="subject-card">
+                        <h4>💰 Economy</h4>
+                        <ul>
+                            <li>Indian Economy</li><li>Economic Development</li><li>Poverty & Development</li>
+                            <li>Banking & Finance</li><li>Budget & Fiscal Policy</li><li>International Trade</li>
+                        </ul>
+                    </div>
+                    <div class="subject-card">
+                        <h4>🔬 Science & Technology</h4>
+                        <ul>
+                            <li>General Science</li><li>Space Technology</li><li>Defence Technology</li>
+                            <li>Biotechnology</li><li>IT & Computers</li><li>Environmental Science</li>
+                        </ul>
+                    </div>
+                    <div class="subject-card">
+                        <h4>📰 Current Affairs</h4>
+                        <ul>
+                            <li>National Events</li><li>International Affairs</li><li>Awards & Honours</li>
+                            <li>Sports Events</li><li>Govt Schemes</li><li>Important Reports</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="syllabus-box">
+                <h3>📝 UPSC Mains - GS Papers</h3>
+                <div class="subject-grid">
+                    <div class="subject-card" style="border-top-color:#28a745">
+                        <h4>📗 GS Paper I</h4>
+                        <ul><li>Indian Heritage & Culture</li><li>History & Geography of World</li><li>Society</li></ul>
+                    </div>
+                    <div class="subject-card" style="border-top-color:#17a2b8">
+                        <h4>📘 GS Paper II</h4>
+                        <ul><li>Governance & Constitution</li><li>Polity & Social Justice</li><li>International Relations</li></ul>
+                    </div>
+                    <div class="subject-card" style="border-top-color:#ffc107">
+                        <h4>📙 GS Paper III</h4>
+                        <ul><li>Technology & Economy</li><li>Biodiversity & Security</li><li>Disaster Management</li></ul>
+                    </div>
+                    <div class="subject-card" style="border-top-color:#dc3545">
+                        <h4>📕 GS Paper IV</h4>
+                        <ul><li>Ethics & Integrity</li><li>Aptitude & Values</li><li>Emotional Intelligence</li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SSC Syllabus (hidden by default) -->
+        <div id="syl-ssc" class="syllabus-container" style="display:none">
+            <div class="syllabus-box">
+                <h3>🏢 SSC CGL Syllabus 2024</h3>
+                <div style="background:#e8f0ff;border-radius:10px;padding:1rem 1.5rem;margin-bottom:1.5rem;font-size:0.9rem;color:#1a1a2e">
+                    <strong>Exam Structure:</strong> Tier 1 (CBT) → Tier 2 (CBT) → Document Verification
+                </div>
+                <h4 style="color:#667eea;margin-bottom:1rem">Tier 1 Subjects</h4>
+                <div class="subject-grid">
+                    <div class="subject-card">
+                        <h4>🧠 General Intelligence & Reasoning</h4>
+                        <ul><li>Analogies</li><li>Similarities & Differences</li><li>Space Visualization</li>
+                            <li>Problem Solving</li><li>Verbal & Figure Classification</li><li>Coding-Decoding</li></ul>
+                    </div>
+                    <div class="subject-card">
+                        <h4>📰 General Awareness</h4>
+                        <ul><li>Current Events</li><li>India & its Neighbours</li><li>History & Culture</li>
+                            <li>Geography</li><li>Economic Scene</li><li>General Polity</li></ul>
+                    </div>
+                    <div class="subject-card">
+                        <h4>🔢 Quantitative Aptitude</h4>
+                        <ul><li>Number System</li><li>Computation of Whole Numbers</li><li>Decimals & Fractions</li>
+                            <li>Ratio & Proportion</li><li>Percentage & Profit-Loss</li><li>Time & Work</li></ul>
+                    </div>
+                    <div class="subject-card">
+                        <h4>🔤 English Language</h4>
+                        <ul><li>Basic Comprehension</li><li>Writing Ability</li><li>Vocabulary</li>
+                            <li>Grammar</li><li>Sentence Correction</li><li>Fill in the Blanks</li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RRB Syllabus (hidden by default) -->
+        <div id="syl-rrb" class="syllabus-container" style="display:none">
+            <div class="syllabus-box">
+                <h3>🚂 RRB NTPC Syllabus 2024</h3>
+                <div class="subject-grid">
+                    <div class="subject-card">
+                        <h4>🧮 Mathematics</h4>
+                        <ul><li>Number System</li><li>Decimals</li><li>Fractions & LCM/HCF</li>
+                            <li>Ratio & Time</li><li>Percentage</li><li>Mensuration</li><li>Algebra</li></ul>
+                    </div>
+                    <div class="subject-card">
+                        <h4>🧠 General Intelligence & Reasoning</h4>
+                        <ul><li>Analogies</li><li>Completion of Number</li><li>Coding & Decoding</li>
+                            <li>Mathematical Operations</li><li>Syllogism</li><li>Venn Diagrams</li></ul>
+                    </div>
+                    <div class="subject-card">
+                        <h4>🌐 General Awareness</h4>
+                        <ul><li>Current Affairs (National & International)</li><li>Games & Sports</li>
+                            <li>Art & Culture of India</li><li>Indian Literature</li><li>Science & Technology</li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bank PO Syllabus (hidden) -->
+        <div id="syl-bank" class="syllabus-container" style="display:none">
+            <div class="syllabus-box">
+                <h3>🏦 Bank PO (IBPS) Syllabus 2024</h3>
+                <div class="subject-grid">
+                    <div class="subject-card"><h4>💡 Reasoning Ability</h4><ul><li>Seating Arrangement</li><li>Puzzles</li><li>Syllogism</li><li>Blood Relations</li><li>Input-Output</li><li>Coding</li></ul></div>
+                    <div class="subject-card"><h4>💻 Computer Aptitude</h4><ul><li>Computer Fundamentals</li><li>MS Office</li><li>Internet & Networks</li><li>Database</li><li>Cybersecurity Basics</li></ul></div>
+                    <div class="subject-card"><h4>🔢 Quantitative Aptitude</h4><ul><li>Data Interpretation</li><li>Number Series</li><li>Quadratic Equations</li><li>Simplification</li><li>Profit & Loss</li></ul></div>
+                    <div class="subject-card"><h4>🔤 English Language</h4><ul><li>Reading Comprehension</li><li>Cloze Test</li><li>Para Jumbles</li><li>Error Spotting</li><li>Vocab</li></ul></div>
+                    <div class="subject-card"><h4>🏛️ General/Economy/Banking</h4><ul><li>Banking Awareness</li><li>Financial Awareness</li><li>Govt Schemes</li><li>Current Affairs</li></ul></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Police Syllabus (hidden) -->
+        <div id="syl-police" class="syllabus-container" style="display:none">
+            <div class="syllabus-box">
+                <h3>👮 Police Recruitment Syllabus</h3>
+                <div class="subject-grid">
+                    <div class="subject-card"><h4>📚 General Knowledge</h4><ul><li>Indian History</li><li>Geography</li><li>Polity & Constitution</li><li>Current Affairs</li><li>Sports & Awards</li></ul></div>
+                    <div class="subject-card"><h4>🧮 Numerical Ability</h4><ul><li>Arithmetic</li><li>Number System</li><li>Percentage</li><li>Ratio & Proportion</li><li>Simple Interest</li></ul></div>
+                    <div class="subject-card"><h4>🧠 Mental Ability</h4><ul><li>Verbal Reasoning</li><li>Non-Verbal Reasoning</li><li>Pattern Recognition</li><li>Coding-Decoding</li></ul></div>
+                    <div class="subject-card"><h4>🏃 Physical Standards</h4><ul><li>Height & Weight Requirements</li><li>Running Tests</li><li>Long Jump / High Jump</li><li>Medical Fitness</li></ul></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teacher Syllabus (hidden) -->
+        <div id="syl-teacher" class="syllabus-container" style="display:none">
+            <div class="syllabus-box">
+                <h3>👩‍🏫 Teacher Recruitment (CTET/TET) Syllabus</h3>
+                <div class="subject-grid">
+                    <div class="subject-card"><h4>👶 Child Development & Pedagogy</h4><ul><li>Child Development (6-11 yrs)</li><li>Inclusive Education</li><li>Learning & Pedagogy</li><li>Child Psychology</li></ul></div>
+                    <div class="subject-card"><h4>🔤 Language I (Hindi/Telugu)</h4><ul><li>Language Comprehension</li><li>Pedagogy of Language</li><li>Grammar</li><li>Writing Skills</li></ul></div>
+                    <div class="subject-card"><h4>🔡 Language II (English)</h4><ul><li>Comprehension</li><li>Pedagogy of Language</li><li>Elements of Language</li></ul></div>
+                    <div class="subject-card"><h4>🔢 Mathematics & Science / Social Studies</h4><ul><li>Content & Pedagogy</li><li>Number Systems</li><li>History & Geography</li><li>Social & Political Life</li></ul></div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center;margin-top:2rem">
+            <a href="exam-pattern.html" class="view-all-btn">View Exam Patterns →</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>📚 Exam Guidance Hub</h4><p>Your go-to portal for government exam information.</p></div>
+            <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="jobs.html">Jobs</a></li><li><a href="exam-pattern.html">Exam Pattern</a></li><li><a href="papers.html">Papers</a></li></ul></div>
+            <div class="footer-section"><h4>Contact</h4><p>📧 info@examhub.com</p><p>📞 +91-9876543210</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Government Exam Portal. All rights reserved.</p></div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        function showSyllabus(exam, btn) {
+            document.querySelectorAll('.syllabus-container').forEach(c => c.style.display='none');
+            document.querySelectorAll('.exam-tab').forEach(b => b.classList.remove('active'));
+            document.getElementById('syl-'+exam).style.display='block';
+            btn.classList.add('active');
+        }
+        document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('active'));
+    </script>
+</body>
+</html>
