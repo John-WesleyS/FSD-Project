@@ -1,13 +1,13 @@
 // ==================== SHARED DATA ====================
 const examsData = [
-    { id: 1, name: "UPSC Civil Services", level: "central", posts: 150, eligibility: "Graduate", salary: "₹56,100 - ₹1,77,500", notification: "2024-01-15", searchTerms: ["upsc", "civil services", "ias", "ips"] },
-    { id: 2, name: "SSC CHSL", level: "central", posts: 3500, eligibility: "12th Pass", salary: "₹18,000 - ₹56,100", notification: "2024-02-01", searchTerms: ["ssc", "chsl", "combined higher secondary"] },
-    { id: 3, name: "RRB NTPC", level: "central", posts: 35000, eligibility: "12th Pass", salary: "₹19,900 - ₹35,400", notification: "2024-01-20", searchTerms: ["rrb", "ntpc", "railways"] },
-    { id: 4, name: "State PSC Exam", level: "state", posts: 800, eligibility: "Graduate", salary: "₹54,000 - ₹1,42,400", notification: "2024-03-10", searchTerms: ["psc", "state", "state services"] },
-    { id: 5, name: "Bank PO (IBPS)", level: "central", posts: 4000, eligibility: "Graduate", salary: "₹23,700 - ₹42,020", notification: "2024-01-25", searchTerms: ["bank", "po", "banking", "ibps"] },
-    { id: 6, name: "LIC AAO", level: "central", posts: 600, eligibility: "Graduate", salary: "₹24,000 - ₹44,000", notification: "2024-02-14", searchTerms: ["insurance", "lic", "aao"] },
-    { id: 7, name: "Police Recruitment", level: "state", posts: 5000, eligibility: "12th Pass", salary: "₹20,000 - ₹49,000", notification: "2024-03-05", searchTerms: ["police", "state police", "constable"] },
-    { id: 8, name: "Teacher Recruitment", level: "state", posts: 10000, eligibility: "B.Ed/Diploma", salary: "₹25,000 - ₹50,000", notification: "2024-02-28", searchTerms: ["teacher", "state", "education"] }
+    { id: 1, name: "UPSC Civil Services", level: "central", posts: 150, eligibility: "Graduate", salary: "₹56,100 - ₹1,77,500", notification: "2024-01-15", officialLink: "https://upsc.gov.in", searchTerms: ["upsc", "civil services", "ias", "ips"] },
+    { id: 2, name: "SSC CHSL", level: "central", posts: 3500, eligibility: "12th Pass", salary: "₹18,000 - ₹56,100", notification: "2024-02-01", officialLink: "https://ssc.nic.in", searchTerms: ["ssc", "chsl", "combined higher secondary"] },
+    { id: 3, name: "RRB NTPC", level: "central", posts: 35000, eligibility: "12th Pass", salary: "₹19,900 - ₹35,400", notification: "2024-01-20", officialLink: "https://www.rrbcdg.gov.in", searchTerms: ["rrb", "ntpc", "railways"] },
+    { id: 4, name: "State PSC Exam", level: "state", posts: 800, eligibility: "Graduate", salary: "₹54,000 - ₹1,42,400", notification: "2024-03-10", officialLink: "https://psc.ap.gov.in", searchTerms: ["psc", "state", "state services"] },
+    { id: 5, name: "Bank PO (IBPS)", level: "central", posts: 4000, eligibility: "Graduate", salary: "₹23,700 - ₹42,020", notification: "2024-01-25", officialLink: "https://www.ibps.in", searchTerms: ["bank", "po", "banking", "ibps"] },
+    { id: 6, name: "LIC AAO", level: "central", posts: 600, eligibility: "Graduate", salary: "₹24,000 - ₹44,000", notification: "2024-02-14", officialLink: "https://licindia.in", searchTerms: ["insurance", "lic", "aao"] },
+    { id: 7, name: "Police Recruitment", level: "state", posts: 5000, eligibility: "12th Pass", salary: "₹20,000 - ₹49,000", notification: "2024-03-05", officialLink: "https://slprb.ap.gov.in", searchTerms: ["police", "state police", "constable"] },
+    { id: 8, name: "Teacher Recruitment", level: "state", posts: 10000, eligibility: "B.Ed/Diploma", salary: "₹25,000 - ₹50,000", notification: "2024-02-28", officialLink: "https://cse.ap.gov.in", searchTerms: ["teacher", "state", "education"] }
 ];
 
 const papersData = [
@@ -96,7 +96,6 @@ function populateExams(filterType = 'all') {
     const container = document.getElementById('examsContainer');
     if (!container) return;
     let data = filterType === 'all' ? examsData : examsData.filter(e => e.level === filterType);
-    // Show only 6 on homepage
     const isHomePage = !window.location.pathname.includes('/pages/');
     if (isHomePage) data = data.slice(0, 6);
 
@@ -114,9 +113,21 @@ function populateExams(filterType = 'all') {
             </div>
             <div class="exam-footer">
                 <button class="exam-btn info-btn" onclick="showExamDetails(${exam.id})">More Info</button>
-                <button class="exam-btn apply-btn" onclick="alert('Redirecting to official website...')">Apply Now</button>
+                <button class="exam-btn apply-btn" onclick="applyExam(${exam.id})">Apply Now</button>
             </div>
         </div>`).join('');
+}
+
+function showExamDetails(id) {
+    const exam = examsData.find(e => e.id === id);
+    if (exam && exam.officialLink) window.open(exam.officialLink, '_blank');
+    else alert("Official website not available.");
+}
+
+function applyExam(id) {
+    const exam = examsData.find(e => e.id === id);
+    if (exam && exam.officialLink) window.open(exam.officialLink, '_blank');
+    else alert("Application link not available.");
 }
 
 function filterExams(type) {
@@ -125,18 +136,16 @@ function filterExams(type) {
     populateExams(type);
 }
 
-function showExamDetails(id) {
-    const exam = examsData.find(e => e.id === id);
-    alert(`📋 ${exam.name}\n\nLevel: ${exam.level === 'central' ? 'Central' : 'State'}\nPosts: ${exam.posts}\nEligibility: ${exam.eligibility}\nSalary: ${exam.salary}\n\nVisit official website for more details!`);
-}
-
 // ==================== PAPERS ====================
 function populatePapers() { displayPapers(papersData.slice(0, 6)); }
 
 function displayPapers(papers) {
     const container = document.getElementById('papersContainer');
     if (!container) return;
-    if (!papers.length) { container.innerHTML = '<p style="text-align:center;grid-column:1/-1;padding:2rem">No papers found.</p>'; return; }
+    if (!papers.length) {
+        container.innerHTML = '<p style="text-align:center;grid-column:1/-1;padding:2rem">No papers found.</p>';
+        return;
+    }
     container.innerHTML = papers.map(p => `
         <div class="paper-card">
             <h4 class="paper-title">${p.title}</h4>
